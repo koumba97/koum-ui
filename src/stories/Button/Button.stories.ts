@@ -11,10 +11,6 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        buttonColor: { control: 'color' },
-        textColor: { control: 'color' },
-    },
     args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -23,13 +19,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        primary: true,
+        color: 'primary',
         label: 'Button',
     },
 };
 
 export const Secondary: Story = {
     args: {
+        color: 'secondary',
         label: 'Button',
     },
 };

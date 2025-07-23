@@ -1,31 +1,35 @@
+import { ThemeColor } from '../../global/types';
 import './button.scss';
 
 export interface ButtonProps {
-    primary?: boolean;
+    color?: ThemeColor;
     style?: 'filled' | 'outlined';
-    buttonColor?: string;
-    textColor?: string;
+    shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
     label: string;
     onClick?: () => void;
 }
 
 export const Button = ({
-    primary = true,
+    color = 'primary',
     size = 'medium',
     style = 'filled',
-    buttonColor,
-    textColor,
+    shape = 'round',
     label,
     ...props
 }: ButtonProps) => {
-    const mode = primary ? 'primary' : 'secondary';
     const buttonStyle = style === 'outlined' ? 'outlined' : null;
+    const buttonShape = shape === 'square' ? 'square' : null;
     return (
         <button
             type="button"
-            className={['koum-button', size, mode, buttonStyle].join(' ')}
-            style={{ backgroundColor: buttonColor, color: textColor }}
+            className={[
+                'koum-button',
+                size,
+                color,
+                buttonStyle,
+                buttonShape,
+            ].join(' ')}
         >
             {label}
         </button>

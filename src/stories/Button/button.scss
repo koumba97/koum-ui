@@ -1,24 +1,78 @@
 @import '../../global/design-tokens.scss';
 
 $border-width: 2px;
+$round-border-radius: 20px;
+$square-border-radius: 10px;
 .koum-button {
     display: inline-block;
     cursor: pointer;
     border: 0;
-    border-radius: 3em;
+    border-radius: $round-border-radius;
+    position: relative;
+    overflow: hidden;
     font-weight: 700;
     line-height: 1;
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: scale 0.3s;
+    &::before {
+        content: '';
+        position: absolute;
+        left: -50px;
+        top: -0px;
+        width: 100%;
+        height: 100%;
+        border-radius: $round-border-radius;
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.5s;
+    }
 
+    &.square {
+        border-radius: $square-border-radius;
+        &::before {
+            border-radius: $square-border-radius;
+        }
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+    &:active {
+        scale: 90%;
+    }
+
+    &:focus-visible {
+        outline-offset: 1px;
+        &.primary {
+            outline: solid 4px
+                lighten($color: $button-background-secondary, $amount: 10%);
+        }
+    }
+
+    &:hover {
+        &::before {
+            left: -0px;
+            top: -0px;
+            opacity: 0.5;
+            position: absolute;
+            inset: 0;
+        }
+    }
     &.primary {
         background-color: $button-background-primary;
         color: $button-text-primary;
-
         &.outlined {
             background-color: transparent;
             border: solid $border-width;
             border-color: $button-outlined-border-primary;
             color: $button-outlined-text-primary;
+        }
+        &::before {
+            background-color: lighten(
+                $color: $button-background-primary,
+                $amount: 60%
+            );
         }
     }
     &.secondary {
@@ -29,6 +83,12 @@ $border-width: 2px;
             border: solid $border-width;
             border-color: $button-outlined-border-secondary;
             color: $button-outlined-text-secondary;
+        }
+        &::before {
+            background-color: lighten(
+                $color: $button-background-secondary,
+                $amount: 20%
+            );
         }
     }
 
