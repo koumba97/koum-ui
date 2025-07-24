@@ -7,6 +7,7 @@ export interface ButtonProps {
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
     label: string;
+    disabled?: boolean;
     onClick?: () => void;
 }
 
@@ -15,6 +16,7 @@ export const Button = ({
     size = 'medium',
     style = 'filled',
     shape = 'round',
+    disabled = false,
     label,
     ...props
 }: ButtonProps) => {
@@ -30,6 +32,9 @@ export const Button = ({
                 buttonStyle,
                 buttonShape,
             ].join(' ')}
+            aria-label={label}
+            disabled={disabled}
+            aria-disabled={disabled}
         >
             {label}
         </button>

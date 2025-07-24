@@ -68,6 +68,7 @@ $square-border-radius: 10px;
     line-height: 1;
     font-family: 'Nunito Sans';
     transition: scale 0.3s;
+
     &::before {
         content: '';
         position: absolute;
@@ -77,30 +78,31 @@ $square-border-radius: 10px;
         height: 100%;
         border-radius: $round-border-radius;
         opacity: 0;
-        z-index: -1;
         transition: all 0.5s;
+        mix-blend-mode: lighten;
+    }
+
+    &.outlined {
+        &::before {
+            mix-blend-mode: hue;
+        }
     }
 
     &.square {
         border-radius: $square-border-radius;
         &::before {
-            border-radius: $square-border-radius;
+            border-radius: 8px;
         }
     }
 
-    > * {
-        position: relative;
-        z-index: 1;
-    }
     &:active {
         scale: 90%;
     }
 
     &:focus-visible {
         outline-offset: 1px;
-        &.primary {
-            outline: solid 4px lighten($color: $secondary-color, $amount: 10%);
-        }
+
+        outline: solid 4px lighten($color: $focus-color, $amount: 10%);
     }
 
     &:hover {
@@ -113,8 +115,32 @@ $square-border-radius: 10px;
         }
     }
 
+    &:disabled {
+        user-select: none;
+        cursor: not-allowed;
+        background-color: map-get(
+            map-get($button-variants, neutral),
+            backgroundColor
+        );
+        color: map-get(map-get($button-variants, neutral), text);
+        &.outlined {
+            border: 2px solid
+                map-get(map-get($button-variants, neutral), outlinedBorder);
+            background-color: transparent;
+            color: map-get(map-get($button-variants, neutral), outlinedText);
+        }
+
+        &:active {
+            scale: unset;
+        }
+
+        &::before {
+            content: none;
+        }
+    }
+
     @each $variant, $props in $button-variants {
-        &.#{$variant} {
+        &.#{$variant}:not(:disabled) {
             background-color: map-get($props, backgroundColor);
             color: map-get($props, text);
             &.outlined {
