@@ -2,6 +2,6 @@ export type ThemeColor =
     | 'primary'
     | 'secondary'
     | 'success'
-    | 'fail'
+    | 'danger'
     | 'info'
     | 'neutral';

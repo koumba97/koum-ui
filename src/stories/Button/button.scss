@@ -1,4 +1,58 @@
 @import '../../global/design-tokens.scss';
+$color-variants: primary, secondary, info, success, danger, warning, neutral;
+
+$button-variants: (
+    primary: (
+        backgroundColor: $primary-color,
+        text: #fff,
+        border: $primary-color,
+        outlinedBorder: $primary-color,
+        outlinedText: $primary-color,
+        hoverOpacity: 60%,
+    ),
+    secondary: (
+        backgroundColor: $secondary-color,
+        text: #fff,
+        outlinedBorder: $secondary-color,
+        outlinedText: $secondary-color,
+        hoverOpacity: 20%,
+    ),
+    info: (
+        backgroundColor: $info-color,
+        text: #fff,
+        outlinedBorder: $info-color,
+        outlinedText: $info-color,
+        hoverOpacity: 20%,
+    ),
+    success: (
+        backgroundColor: $success-color,
+        text: #fff,
+        outlinedBorder: $success-color,
+        outlinedText: $success-color,
+        hoverOpacity: 20%,
+    ),
+    warning: (
+        backgroundColor: $warning-color,
+        text: #fff,
+        outlinedBorder: $warning-color,
+        outlinedText: $warning-color,
+        hoverOpacity: 20%,
+    ),
+    danger: (
+        backgroundColor: $danger-color,
+        text: #fff,
+        outlinedBorder: $danger-color,
+        outlinedText: $danger-color,
+        hoverOpacity: 20%,
+    ),
+    neutral: (
+        backgroundColor: $neutral-color,
+        text: #fff,
+        outlinedBorder: $neutral-color,
+        outlinedText: $neutral-color,
+        hoverOpacity: 20%,
+    ),
+);
 
 $border-width: 2px;
 $round-border-radius: 20px;
@@ -12,7 +66,7 @@ $square-border-radius: 10px;
     overflow: hidden;
     font-weight: 700;
     line-height: 1;
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans';
     transition: scale 0.3s;
     &::before {
         content: '';
@@ -45,8 +99,7 @@ $square-border-radius: 10px;
     &:focus-visible {
         outline-offset: 1px;
         &.primary {
-            outline: solid 4px
-                lighten($color: $button-background-secondary, $amount: 10%);
+            outline: solid 4px lighten($color: $secondary-color, $amount: 10%);
         }
     }
 
@@ -59,36 +112,22 @@ $square-border-radius: 10px;
             inset: 0;
         }
     }
-    &.primary {
-        background-color: $button-background-primary;
-        color: $button-text-primary;
-        &.outlined {
-            background-color: transparent;
-            border: solid $border-width;
-            border-color: $button-outlined-border-primary;
-            color: $button-outlined-text-primary;
-        }
-        &::before {
-            background-color: lighten(
-                $color: $button-background-primary,
-                $amount: 60%
-            );
-        }
-    }
-    &.secondary {
-        background-color: $button-background-secondary;
-        color: $button-text-secondary;
-        &.outlined {
-            background-color: transparent;
-            border: solid $border-width;
-            border-color: $button-outlined-border-secondary;
-            color: $button-outlined-text-secondary;
-        }
-        &::before {
-            background-color: lighten(
-                $color: $button-background-secondary,
-                $amount: 20%
-            );
+
+    @each $variant, $props in $button-variants {
+        &.#{$variant} {
+            background-color: map-get($props, backgroundColor);
+            color: map-get($props, text);
+            &.outlined {
+                border: 2px solid map-get($props, outlinedBorder);
+                background-color: transparent;
+                color: map-get($props, outlinedText);
+            }
+            &::before {
+                background-color: lighten(
+                    $color: map-get($props, backgroundColor),
+                    $amount: map-get($props, hoverOpacity)
+                );
+            }
         }
     }
 
