@@ -135,6 +135,9 @@ $square-border-radius: 10px;
             background-color: transparent;
             color: map-get(map-get($button-variants, neutral), outlinedText);
         }
+        label {
+            cursor: not-allowed;
+        }
 
         &:active {
             scale: unset;

@@ -4,7 +4,6 @@ import { fn } from 'storybook/test';
 
 import { Button } from './Button';
 import EarthSVG from '../../global/Earth';
-import { color } from 'storybook/internal/theming';
 
 const meta = {
     title: 'Example/Button',
@@ -62,22 +61,16 @@ export const Square: Story = {
     },
 };
 
-// const IconTemplate = () => {
-//     return <Button label='Button' shape='square' icon={EarthSVG}/>
-// };
-
-export const Icon: Story = {
+export const ButtonWithIcon: Story = {
     args: {
         color: 'primary',
         label: 'Button',
         shape: 'square',
+        visibleLabel: true,
     },
     render: (args) => (
         <Button
             {...args}
-            label="Button"
-            shape="square"
-            visibleLabel={false}
             icon={
                 <EarthSVG
                     width={20}
@@ -90,17 +83,16 @@ export const Icon: Story = {
     ),
 };
 
-export const IconButton: Story = {
+export const Icon: Story = {
     args: {
         color: 'primary',
         label: 'Button',
         shape: 'square',
+        visibleLabel: false,
     },
     render: (args) => (
         <Button
             {...args}
-            label="Button"
-            shape="square"
             icon={
                 <EarthSVG
                     width={20}
