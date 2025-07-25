@@ -1,27 +1,36 @@
+import { ComponentType } from 'react';
 import { ThemeColor } from '../../global/types';
 import './button.scss';
 
 export interface ButtonProps {
+    children?: React.ReactNode;
     color?: ThemeColor;
-    style?: 'filled' | 'outlined';
+    disabled?: boolean;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
+    style?: 'filled' | 'outlined';
+    icon?: React.ReactNode;
     label: string;
-    disabled?: boolean;
+    visibleLabel?: boolean;
     onClick?: () => void;
 }
 
 export const Button = ({
+    children,
     color = 'primary',
+    disabled = false,
+    shape = 'round',
     size = 'medium',
     style = 'filled',
-    shape = 'round',
-    disabled = false,
+    icon,
     label,
+    visibleLabel = true,
+    onClick,
     ...props
 }: ButtonProps) => {
     const buttonStyle = style === 'outlined' ? 'outlined' : null;
     const buttonShape = shape === 'square' ? 'square' : null;
+    const iconButton = !visibleLabel && icon ? 'icon-button' : null;
     return (
         <button
             type="button"
@@ -31,12 +40,17 @@ export const Button = ({
                 color,
                 buttonStyle,
                 buttonShape,
+                iconButton,
             ].join(' ')}
             aria-label={label}
             disabled={disabled}
             aria-disabled={disabled}
+            onClick={onClick}
         >
-            {label}
+            <label>
+                {icon && <span className="icon">{icon}</span>}
+                {visibleLabel ? label : null}
+            </label>
         </button>
     );
 };

@@ -1,0 +1,122 @@
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
+
+import { fn } from 'storybook/test';
+
+import { Button } from './Button';
+import EarthSVG from '../../global/Earth';
+import { color } from 'storybook/internal/theming';
+
+const meta = {
+    title: 'Example/Button',
+    component: Button,
+    subcomponents: { EarthSVG },
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    args: { onClick: fn() },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+//type Story = StoryObj<typeof Button>;
+
+export const Large: Story = {
+    args: {
+        children: 'Button',
+        label: 'Button',
+        size: 'large',
+    },
+};
+
+export const Medium: Story = {
+    args: {
+        children: 'Button',
+        label: 'Button',
+        size: 'medium',
+    },
+};
+
+export const Small: Story = {
+    args: {
+        children: 'Button',
+        label: 'Button',
+        size: 'small',
+    },
+};
+
+export const Outlined: Story = {
+    args: {
+        children: 'Button',
+        label: 'Button',
+        style: 'outlined',
+    },
+};
+
+export const Square: Story = {
+    args: {
+        children: 'Button',
+        color: 'primary',
+        label: 'Button',
+        shape: 'square',
+    },
+};
+
+// const IconTemplate = () => {
+//     return <Button label='Button' shape='square' icon={EarthSVG}/>
+// };
+
+export const Icon: Story = {
+    args: {
+        color: 'primary',
+        label: 'Button',
+        shape: 'square',
+    },
+    render: (args) => (
+        <Button
+            {...args}
+            label="Button"
+            shape="square"
+            visibleLabel={false}
+            icon={
+                <EarthSVG
+                    width={20}
+                    height={20}
+                    viewBox="0 0 20 20"
+                    color="white"
+                />
+            }
+        />
+    ),
+};
+
+export const IconButton: Story = {
+    args: {
+        color: 'primary',
+        label: 'Button',
+        shape: 'square',
+    },
+    render: (args) => (
+        <Button
+            {...args}
+            label="Button"
+            shape="square"
+            icon={
+                <EarthSVG
+                    width={20}
+                    height={20}
+                    viewBox="0 0 20 20"
+                    color="white"
+                />
+            }
+        />
+    ),
+};
+
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+        label: 'Button',
+    },
+};

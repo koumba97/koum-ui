@@ -29,7 +29,7 @@ $button-variants: (
         text: #fff,
         outlinedBorder: $success-color,
         outlinedText: $success-color,
-        hoverOpacity: 20%,
+        hoverOpacity: 30%,
     ),
     warning: (
         backgroundColor: $warning-color,
@@ -43,7 +43,7 @@ $button-variants: (
         text: #fff,
         outlinedBorder: $danger-color,
         outlinedText: $danger-color,
-        hoverOpacity: 20%,
+        hoverOpacity: 40%,
     ),
     neutral: (
         backgroundColor: $neutral-color,
@@ -68,6 +68,12 @@ $square-border-radius: 10px;
     line-height: 1;
     font-family: 'Nunito Sans';
     transition: scale 0.3s;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
     &::before {
         content: '';
@@ -161,6 +167,9 @@ $square-border-radius: 10px;
     &.small {
         padding: 10px 16px;
         font-size: 12px;
+        &.icon-button {
+            padding: 10px 12px;
+        }
         &.outlined {
             padding: calc(10px - $border-width) calc(16px - $border-width);
         }
@@ -168,6 +177,9 @@ $square-border-radius: 10px;
     &.medium {
         padding: 12px 20px;
         font-size: 14px;
+        &.icon-button {
+            padding: 12px 14px;
+        }
         &.outlined {
             padding: calc(12px - $border-width) calc(20px - $border-width);
         }
@@ -175,6 +187,9 @@ $square-border-radius: 10px;
     &.large {
         padding: 12px 24px;
         font-size: 16px;
+        &.icon-button {
+            padding: 14px 16px;
+        }
         &.outlined {
             padding: calc(12px - $border-width) calc(24px - $border-width);
         }
