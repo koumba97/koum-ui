@@ -28,13 +28,13 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "tsc",
-        "copy:scss": "cpy \"src/style/*.scss\" \"dist/style\"",
+        "build": "tsc && sass src/style:dist/style && cpy \"src/style/*.css\" \"dist/style\"",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "pretty": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}\""
+        "pretty": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}\"",
+        "watch:scss": "sass --watch src/style:src/style"
     },
     "eslintConfig": {
         "extends": [

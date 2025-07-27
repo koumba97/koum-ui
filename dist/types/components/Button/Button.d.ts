@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeColor } from '../../global/types';
-import '../../style/button.scss';
+import '../../style/button.css';
 export interface ButtonProps {
     children?: React.ReactNode;
     color?: ThemeColor;

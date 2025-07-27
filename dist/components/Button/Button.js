@@ -10,7 +10,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import '../../style/button.scss';
+import '../../style/button.css';
 const Button = (_a) => {
     var { children, color = 'primary', disabled = false, shape = 'round', size = 'medium', style = 'filled', icon, label, visibleLabel = true, onClick } = _a, props = __rest(_a, ["children", "color", "disabled", "shape", "size", "style", "icon", "label", "visibleLabel", "onClick"]);
     const buttonStyle = style === 'outlined' ? 'outlined' : null;
