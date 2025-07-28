@@ -1,65 +1,72 @@
 import React from 'react';
-import { ThemeColor, ThemeColorHex } from '../../global/types';
+import { ThemeColor } from '../../global/types';
 import '../../style/label.css';
 import CloseSVG from '../../global/Close';
 
 export interface LabelProps {
     action?: 'none' | 'delete' | 'check';
+    deleteLabel?: string;
+    checkLabel?: string;
+    color?: ThemeColor;
+    id?: string;
+    icon?: React.ReactNode;
     isChecked?: boolean;
     isDeleted?: boolean;
-    children?: React.ReactNode;
-    color?: ThemeColor;
-    disabled?: boolean;
-    shape?: 'round' | 'square';
-    size?: 'small' | 'medium' | 'large';
-    style?: 'filled' | 'outlined';
-    icon?: React.ReactNode;
     label: string;
-    visibleLabel?: boolean;
-    onClick?: () => void;
     onCheck?: () => void;
     onDelete?: () => void;
+    shape?: 'round' | 'square';
+    size?: 'small' | 'medium' | 'large';
+    visibleLabel?: boolean;
 }
 
 const Label = ({
+    label,
     action = 'none',
-    children,
+    checkLabel = `select ${label}`,
     color = 'primary',
-    disabled = false,
+    deleteLabel = `delete ${label}`,
+    icon,
+    id = label,
+    isChecked,
+    onCheck,
+    onDelete,
     shape = 'round',
     size = 'medium',
-    style = 'filled',
-    icon,
-    label,
-    onClick,
     ...props
 }: LabelProps) => {
-    const buttonStyle = style === 'outlined' ? 'outlined' : null;
-    const buttonShape = shape === 'square' ? 'square' : null;
+    const labelShape = shape === 'square' ? 'square' : null;
+    const labelAction = action !== 'none' ? action : null;
     return (
         <div
             className={[
                 'koum-label',
                 size,
                 color,
-                buttonStyle,
-                buttonShape,
+                labelShape,
+                labelAction,
             ].join(' ')}
-            aria-label={label}
-            //disabled={disabled}
-            aria-disabled={disabled}
-            onClick={onClick}
         >
-            <label>
+            <span>
                 {icon && <span className="icon">{icon}</span>}
                 {label}
-            </label>
+            </span>
             {action === 'delete' ? (
-                <button>
+                <button
+                    aria-label={deleteLabel}
+                    className="delete-label"
+                    onClick={onDelete}
+                >
                     <CloseSVG width={10} height={10} viewBox="8 5 120 120" />
                 </button>
             ) : action === 'check' ? (
-                <input type="checkbox" id="" name="" />
+                <input
+                    id={id}
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={onCheck}
+                    aria-label={checkLabel}
+                />
             ) : null}
         </div>
     );

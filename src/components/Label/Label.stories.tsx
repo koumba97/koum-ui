@@ -14,7 +14,7 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    args: { onClick: fn() },
+    args: { onDelete: fn() },
 } satisfies Meta<typeof Label>;
 
 export default meta;
@@ -69,7 +69,7 @@ export const DeleteLabel: Story = {
         };
 
         return visibleLabel ? (
-            <Label {...args} onClick={handleDelete} />
+            <Label {...args} onDelete={handleDelete} />
         ) : (
             <></>
         );

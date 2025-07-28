@@ -19,7 +19,7 @@ Koum UI is designed for projects using:
 ## 📦 Installation
 
 ```shell
-npm install @...
+npm install
 ```
 
 ## 🛠️ Usage
@@ -39,7 +39,7 @@ function App() {
 Currently, Koum UI includes the following components:
 
 - Button
-- Label (WIP)
+- Label
 - (More coming soon...)
 
 ## 🧪 Development

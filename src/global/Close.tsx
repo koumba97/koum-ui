@@ -3,6 +3,7 @@ import { SVGProp } from './types';
 export default function CloseSVG({ width, height, viewBox }: SVGProp) {
     return (
         <svg
+            aria-hidden="true"
             width={width}
             height={height}
             viewBox={viewBox ? viewBox : `0 0 ${width} ${height}`}
