@@ -1,0 +1,88 @@
+@import './design-tokens.scss';
+
+$label-variants: (
+    primary: (
+        backgroundColor: $primary-color,
+        text: $primary-color,
+        hoverOpacity: 60%,
+    ),
+    secondary: (
+        backgroundColor: $secondary-color,
+        text: $secondary-color,
+        hoverOpacity: 20%,
+    ),
+    info: (
+        backgroundColor: $info-color,
+        text: $info-color,
+        hoverOpacity: 20%,
+    ),
+    success: (
+        backgroundColor: $success-color,
+        text: $success-color,
+        hoverOpacity: 30%,
+    ),
+    warning: (
+        backgroundColor: $warning-color,
+        text: $warning-color,
+        hoverOpacity: 20%,
+    ),
+    danger: (
+        backgroundColor: $danger-color,
+        text: $danger-color,
+        hoverOpacity: 40%,
+    ),
+    neutral: (
+        backgroundColor: $neutral-color,
+        text: $neutral-color,
+        hoverOpacity: 20%,
+    ),
+);
+
+.koum-label {
+    font-family: 'Nunito';
+    padding: 4px 8px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    label {
+        display: flex;
+        gap: 4px;
+    }
+    button {
+        background-color: transparent;
+        height: max-content;
+        border: none;
+        transition: 0.3s scale;
+        color: inherit;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:active {
+            scale: 90%;
+        }
+    }
+    .icon {
+        height: max-content;
+        display: flex;
+    }
+
+    @each $variant, $props in $label-variants {
+        &.#{$variant}:not(:disabled) {
+            background-color: rgba(map-get($props, backgroundColor), 0.2);
+
+            color: darken(map-get($props, text), 0.2);
+
+            &::before {
+                background-color: lighten(
+                    $color: map-get($props, backgroundColor),
+                    $amount: map-get($props, hoverOpacity)
+                );
+            }
+            .icon {
+                fill: map-get($props, text);
+            }
+        }
+    }
+}

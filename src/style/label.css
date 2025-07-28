@@ -1,0 +1,102 @@
+.koum-label {
+  font-family: "Nunito";
+  padding: 4px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.koum-label label {
+  display: flex;
+  gap: 4px;
+}
+.koum-label button {
+  background-color: transparent;
+  height: max-content;
+  border: none;
+  transition: 0.3s scale;
+  color: inherit;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.koum-label button:active {
+  scale: 90%;
+}
+.koum-label .icon {
+  height: max-content;
+  display: flex;
+}
+.koum-label.primary:not(:disabled) {
+  background-color: rgba(39, 39, 39, 0.2);
+  color: rgb(38.49, 38.49, 38.49);
+}
+.koum-label.primary:not(:disabled)::before {
+  background-color: silver;
+}
+.koum-label.primary:not(:disabled) .icon {
+  fill: #272727;
+}
+.koum-label.secondary:not(:disabled) {
+  background-color: rgba(97, 70, 255, 0.2);
+  color: rgb(96.1288648649, 68.98, 255);
+}
+.koum-label.secondary:not(:disabled)::before {
+  background-color: rgb(184.1135135135, 172, 255);
+}
+.koum-label.secondary:not(:disabled) .icon {
+  fill: #6146ff;
+}
+.koum-label.info:not(:disabled) {
+  background-color: rgba(97, 160, 255, 0.2);
+  color: rgb(95.98, 159.3867088608, 255);
+}
+.koum-label.info:not(:disabled)::before {
+  background-color: rgb(199, 221.3291139241, 255);
+}
+.koum-label.info:not(:disabled) .icon {
+  fill: #61a0ff;
+}
+.koum-label.success:not(:disabled) {
+  background-color: rgba(75, 195, 75, 0.2);
+  color: rgb(74.235, 194.745, 74.235);
+}
+.koum-label.success:not(:disabled)::before {
+  background-color: rgb(189.75, 233.25, 189.75);
+}
+.koum-label.success:not(:disabled) .icon {
+  fill: #4bc34b;
+}
+.koum-label.warning:not(:disabled) {
+  background-color: rgba(255, 181, 43, 0.2);
+  color: rgb(255, 180.6439622642, 41.98);
+}
+.koum-label.warning:not(:disabled)::before {
+  background-color: rgb(255, 216.6037735849, 145);
+}
+.koum-label.warning:not(:disabled) .icon {
+  fill: #ffb52b;
+}
+.koum-label.danger:not(:disabled) {
+  background-color: rgba(185, 38, 38, 0.2);
+  color: rgb(184.1538116592, 37.8261883408, 37.8261883408);
+}
+.koum-label.danger:not(:disabled)::before {
+  background-color: rgb(240.8565022422, 186.1434977578, 186.1434977578);
+}
+.koum-label.danger:not(:disabled) .icon {
+  fill: #b92626;
+}
+.koum-label.neutral:not(:disabled) {
+  background-color: rgba(153, 163, 180, 0.2);
+  color: rgb(152.4122033898, 162.4698305085, 179.5677966102);
+}
+.koum-label.neutral:not(:disabled)::before {
+  background-color: rgb(211.7796610169, 216.0169491525, 223.2203389831);
+}
+.koum-label.neutral:not(:disabled) .icon {
+  fill: #99a3b4;
+}
+
+/*# sourceMappingURL=label.css.map */
