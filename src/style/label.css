@@ -1,6 +1,5 @@
 .koum-label {
   font-family: "Nunito";
-  padding: 4px 8px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -8,6 +7,7 @@
 }
 .koum-label label {
   display: flex;
+  align-items: center;
   gap: 4px;
 }
 .koum-label button {
@@ -16,10 +16,12 @@
   border: none;
   transition: 0.3s scale;
   color: inherit;
-  padding: 0;
+  padding: 2px;
   display: flex;
   align-items: center;
+  border-radius: 2px;
   cursor: pointer;
+  transition: 0.3s background-color;
 }
 .koum-label button:active {
   scale: 90%;
@@ -27,6 +29,9 @@
 .koum-label .icon {
   height: max-content;
   display: flex;
+}
+.koum-label.square {
+  border-radius: 4px;
 }
 .koum-label.primary:not(:disabled) {
   background-color: rgba(39, 39, 39, 0.2);
@@ -38,6 +43,9 @@
 .koum-label.primary:not(:disabled) .icon {
   fill: #272727;
 }
+.koum-label.primary:not(:disabled) button:hover {
+  background-color: rgba(39, 39, 39, 0.2);
+}
 .koum-label.secondary:not(:disabled) {
   background-color: rgba(97, 70, 255, 0.2);
   color: rgb(96.1288648649, 68.98, 255);
@@ -47,6 +55,9 @@
 }
 .koum-label.secondary:not(:disabled) .icon {
   fill: #6146ff;
+}
+.koum-label.secondary:not(:disabled) button:hover {
+  background-color: rgba(97, 70, 255, 0.2);
 }
 .koum-label.info:not(:disabled) {
   background-color: rgba(97, 160, 255, 0.2);
@@ -58,6 +69,9 @@
 .koum-label.info:not(:disabled) .icon {
   fill: #61a0ff;
 }
+.koum-label.info:not(:disabled) button:hover {
+  background-color: rgba(97, 160, 255, 0.2);
+}
 .koum-label.success:not(:disabled) {
   background-color: rgba(75, 195, 75, 0.2);
   color: rgb(74.235, 194.745, 74.235);
@@ -67,6 +81,9 @@
 }
 .koum-label.success:not(:disabled) .icon {
   fill: #4bc34b;
+}
+.koum-label.success:not(:disabled) button:hover {
+  background-color: rgba(75, 195, 75, 0.2);
 }
 .koum-label.warning:not(:disabled) {
   background-color: rgba(255, 181, 43, 0.2);
@@ -78,6 +95,9 @@
 .koum-label.warning:not(:disabled) .icon {
   fill: #ffb52b;
 }
+.koum-label.warning:not(:disabled) button:hover {
+  background-color: rgba(255, 181, 43, 0.2);
+}
 .koum-label.danger:not(:disabled) {
   background-color: rgba(185, 38, 38, 0.2);
   color: rgb(184.1538116592, 37.8261883408, 37.8261883408);
@@ -88,6 +108,9 @@
 .koum-label.danger:not(:disabled) .icon {
   fill: #b92626;
 }
+.koum-label.danger:not(:disabled) button:hover {
+  background-color: rgba(185, 38, 38, 0.2);
+}
 .koum-label.neutral:not(:disabled) {
   background-color: rgba(153, 163, 180, 0.2);
   color: rgb(152.4122033898, 162.4698305085, 179.5677966102);
@@ -97,6 +120,30 @@
 }
 .koum-label.neutral:not(:disabled) .icon {
   fill: #99a3b4;
+}
+.koum-label.neutral:not(:disabled) button:hover {
+  background-color: rgba(153, 163, 180, 0.2);
+}
+.koum-label.small {
+  padding: 2px 10px;
+  font-size: 12px;
+}
+.koum-label.small.icon-button {
+  padding: 10px 12px;
+}
+.koum-label.medium {
+  padding: 4px 12px;
+  font-size: 14px;
+}
+.koum-label.medium.icon-button {
+  padding: 12px 14px;
+}
+.koum-label.large {
+  padding: 4px 16px;
+  font-size: 16px;
+}
+.koum-label.large.icon-button {
+  padding: 14px 16px;
 }
 
 /*# sourceMappingURL=label.css.map */

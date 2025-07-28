@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { fn } from 'storybook/test';
 
@@ -32,23 +32,64 @@ export const Medium: Story = {
     args: {
         label: 'Label',
         size: 'medium',
+        color: 'secondary',
+    },
+};
+
+export const Small: Story = {
+    args: {
+        label: 'Label',
+        size: 'small',
+        color: 'danger',
+    },
+};
+
+export const Square: Story = {
+    args: {
+        label: 'Label',
+        color: 'warning',
+        size: 'medium',
+        shape: 'square',
+    },
+};
+
+export const DeleteLabel: Story = {
+    args: {
+        color: 'info',
+        label: 'Label',
+        shape: 'square',
+        action: 'delete',
+    },
+
+    render: (args) => {
+        const [visibleLabel, setVisibleLabel] = React.useState(true); // ✅ hook dans render
+
+        const handleDelete = () => {
+            setVisibleLabel(false);
+        };
+
+        return visibleLabel ? (
+            <Label {...args} onClick={handleDelete} />
+        ) : (
+            <></>
+        );
     },
 };
 
 export const ButtonWithIcon: Story = {
     args: {
-        color: 'primary',
-        label: 'Button',
+        color: 'success',
+        label: 'Label',
         shape: 'square',
-        visibleLabel: true,
     },
+
     render: (args) => (
         <Label
             {...args}
             icon={
                 <EarthSVG
-                    width={20}
-                    height={20}
+                    width={15}
+                    height={15}
                     viewBox="0 0 20 20"
                     color={ThemeColorHex[args.color ?? 'primary']}
                 />
