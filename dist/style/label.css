@@ -59,19 +59,6 @@
 .koum-label.secondary:not(:disabled) button:hover {
   background-color: rgba(97, 70, 255, 0.2);
 }
-.koum-label.tertiary:not(:disabled) {
-  background-color: rgba(255, 139, 218, 0.2);
-  color: rgb(255, 137.98, 217.6746551724);
-}
-.koum-label.tertiary:not(:disabled)::before {
-  background-color: rgb(255, 241, 250.5344827586);
-}
-.koum-label.tertiary:not(:disabled) .icon {
-  fill: #ff8bda;
-}
-.koum-label.tertiary:not(:disabled) button:hover {
-  background-color: rgba(255, 139, 218, 0.2);
-}
 .koum-label.info:not(:disabled) {
   background-color: rgba(97, 160, 255, 0.2);
   color: rgb(95.98, 159.3867088608, 255);

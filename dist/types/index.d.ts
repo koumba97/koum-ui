@@ -1,2 +1,3 @@
 import Button from './components/Button/index';
-export { Button };
+import Label from './components/Label/index';
+export { Button, Label };

@@ -4,6 +4,7 @@ import { fn } from 'storybook/test';
 
 import Button from './Button';
 import EarthSVG from '../../global/Earth';
+import { ThemeColorHex } from '../../global/types';
 
 const meta = {
     title: 'Example/Button',
@@ -76,7 +77,11 @@ export const ButtonWithIcon: Story = {
                     width={20}
                     height={20}
                     viewBox="0 0 20 20"
-                    color="white"
+                    color={
+                        args.style === 'outlined'
+                            ? ThemeColorHex[args.color ?? 'primary']
+                            : 'white'
+                    }
                 />
             }
         />

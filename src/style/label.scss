@@ -11,6 +11,11 @@ $label-variants: (
         text: $secondary-color,
         hoverOpacity: 20%,
     ),
+    tertiary: (
+        backgroundColor: $tertiary-color,
+        text: $tertiary-color,
+        hoverOpacity: 20%,
+    ),
     info: (
         backgroundColor: $info-color,
         text: $info-color,

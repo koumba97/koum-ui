@@ -16,6 +16,13 @@ $button-variants: (
         outlinedText: $secondary-color,
         hoverOpacity: 20%,
     ),
+    tertiary: (
+        backgroundColor: $tertiary-color,
+        text: #fff,
+        outlinedBorder: $tertiary-color,
+        outlinedText: $tertiary-color,
+        hoverOpacity: 20%,
+    ),
     info: (
         backgroundColor: $info-color,
         text: #fff,

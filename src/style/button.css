@@ -94,6 +94,18 @@
 .koum-button.secondary:not(:disabled)::before {
   background-color: rgb(184.1135135135, 172, 255);
 }
+.koum-button.tertiary:not(:disabled) {
+  background-color: #ff8bda;
+  color: #fff;
+}
+.koum-button.tertiary:not(:disabled).outlined {
+  border: 2px solid #ff8bda;
+  background-color: transparent;
+  color: #ff8bda;
+}
+.koum-button.tertiary:not(:disabled)::before {
+  background-color: rgb(255, 241, 250.5344827586);
+}
 .koum-button.info:not(:disabled) {
   background-color: #61a0ff;
   color: #fff;
