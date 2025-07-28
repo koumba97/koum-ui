@@ -39,7 +39,7 @@ function App() {
 Currently, Koum UI includes the following components:
 
 - Button
-- Label
+- Label (WIP)
 - (More coming soon...)
 
 ## 🧪 Development

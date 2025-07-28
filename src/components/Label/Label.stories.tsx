@@ -50,7 +50,7 @@ export const ButtonWithIcon: Story = {
                     width={20}
                     height={20}
                     viewBox="0 0 20 20"
-                    color={ThemeColorHex[args.color]}
+                    color={ThemeColorHex[args.color ?? 'primary']}
                 />
             }
         />
