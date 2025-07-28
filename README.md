@@ -19,7 +19,7 @@ Koum UI is designed for projects using:
 ## 📦 Installation
 
 ```shell
-npm install
+npm i koum-ui
 ```
 
 ## 🛠️ Usage
