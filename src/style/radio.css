@@ -1,0 +1,11 @@
+.koum-radio {
+  font-family: "Nunito";
+  cursor: pointer;
+  border: solid;
+  width: max-content;
+}
+.koum-radio label {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=radio.css.map */
