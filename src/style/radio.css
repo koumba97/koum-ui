@@ -1,11 +1,87 @@
+.koum-group-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 20;
+}
+
 .koum-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: "Nunito";
   cursor: pointer;
-  border: solid;
+  margin: 4px;
   width: max-content;
 }
 .koum-radio label {
   cursor: pointer;
+}
+
+.koum-radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.koum-radio input[type=radio] + label::before {
+  transition: background 0.4s;
+}
+.koum-radio input[type=radio]:focus-visible + label::before {
+  outline-offset: 1px;
+  outline: solid 4px rgba(255, 125, 246.3812154696, 0.549);
+}
+.koum-radio input[type=radio]:checked + label::before {
+  border-color: #272727;
+}
+
+.koum-radio input[type=radio]:not(:checked) input[type=radio]:not(:disabled) + label:hover::before {
+  background-color: rgba(39, 39, 39, 0.2);
+  border-color: #272727;
+}
+
+.koum-radio label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.koum-radio label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #7f8898;
+  border-radius: 50%;
+  background: white;
+}
+
+.koum-radio input[type=radio]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #272727;
+}
+
+/* Disabled */
+.koum-radio input[type=radio]:disabled + label {
+  cursor: not-allowed;
+  color: #b1bdd2;
+}
+.koum-radio input[type=radio]:disabled + label::after {
+  background: #b1bdd2;
+}
+
+.koum-radio input[type=radio]:disabled + label::before {
+  border-color: #b1bdd2;
+  background: white;
 }
 
 /*# sourceMappingURL=radio.css.map */

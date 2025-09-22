@@ -26,12 +26,29 @@ export const Default: Story = {
         name: 'color',
         label: 'Pink',
         id: 'pink-color',
+        disabled: false,
     },
     render: (args) => (
-        <div>
-            <Radio {...args} label={args.label} id={args.id} name={args.name} />
-            <Radio label="Blue" id="blue-color" name={args.name} />
-            <Radio label="Purple" id="purple-color" name={args.name} />
+        <div className="koum-group-radio">
+            <Radio
+                {...args}
+                label={args.label}
+                id={args.id}
+                name={args.name}
+                disabled={args.disabled}
+            />
+            <Radio
+                label="Blue"
+                id="blue-color"
+                name={args.name}
+                disabled={args.disabled}
+            />
+            <Radio
+                label="Purple"
+                id="purple-color"
+                name={args.name}
+                disabled={args.disabled}
+            />
         </div>
     ),
 };

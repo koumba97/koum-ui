@@ -1,3 +1,10 @@
+$grey-100: #c6d4ed;
+$grey-200: #b1bdd2;
+$grey-300: #99a3b4;
+$grey-400: #7f8898;
+$grey-800: #4e545d;
+$grey-900: #2f3338;
+
 //COLORS
 $primary-color: #272727;
 $secondary-color: #6146ff;
@@ -6,8 +13,8 @@ $info-color: #61a0ff;
 $success-color: #4bc34b;
 $warning-color: #ffb52b;
 $danger-color: #b92626;
-$neutral-color: #99a3b4;
+$neutral-color: $grey-300;
 
-$focus-color: rgba(74, 198, 255, 0.549);
+$focus-color: rgba(255, 74, 243, 0.549);
 $white-color: #ffffff;
 $black-color: #000000;

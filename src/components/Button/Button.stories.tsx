@@ -19,7 +19,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-//type Story = StoryObj<typeof Button>;
 
 export const Large: Story = {
     args: {

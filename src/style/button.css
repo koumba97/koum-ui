@@ -41,7 +41,7 @@
 }
 .koum-button:focus-visible {
   outline-offset: 1px;
-  outline: solid 4px rgba(125, 214.0607734807, 255, 0.549);
+  outline: solid 4px rgba(255, 125, 246.3812154696, 0.549);
 }
 .koum-button:hover::before {
   left: 0px;
