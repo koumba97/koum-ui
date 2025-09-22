@@ -80,21 +80,21 @@ export const MultipleRadio: Story = {
                         id={args.id}
                         name={args.name}
                         disabled={args.disabled}
-                        onChange={() => handleChange(args.id)}
+                        onChange={handleChange}
                     />
                     <Radio
                         label="Lion 🦁"
                         id="lion-animal"
                         name={args.name}
                         disabled={args.disabled}
-                        onChange={() => handleChange('lion-animal')}
+                        onChange={handleChange}
                     />
                     <Radio
                         label="Bear 🐻"
                         id="bear-animal"
                         name={args.name}
                         disabled={args.disabled}
-                        onChange={() => handleChange('bear-animal')}
+                        onChange={handleChange}
                     />
                 </div>
             </div>
