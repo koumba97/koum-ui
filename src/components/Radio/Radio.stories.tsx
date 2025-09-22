@@ -21,12 +21,39 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SingleRadio: Story = {
+export const Default: Story = {
     args: {
         name: 'animal',
         label: 'Tiger 🐯',
         id: 'tiger-animal',
-        disabled: false,
+    },
+};
+
+export const Checked: Story = {
+    args: {
+        name: 'animal',
+        label: 'Tiger 🐯',
+        id: 'tiger-animal',
+        checked: true,
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        name: 'animal',
+        label: 'Tiger 🐯',
+        id: 'tiger-animal',
+        disabled: true,
+    },
+};
+
+export const DisabledChecked: Story = {
+    args: {
+        name: 'animal',
+        label: 'Tiger 🐯',
+        id: 'tiger-animal',
+        disabled: true,
+        checked: true,
     },
 };
 
