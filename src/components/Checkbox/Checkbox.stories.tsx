@@ -61,21 +61,27 @@ export const MultipleRadio: Story = {
         disabled: false,
     },
     render: (args) => {
-        const [selectedValue, setSelectedValue] = useState<undefined | string>(
-            undefined
-        );
-        const handleChange = (value: string) => {
-            setSelectedValue(value);
+        const [selectedValues, setSelectedValues] = useState<string[]>([]);
+        const handleChange = (value: string, checked: boolean) => {
+            if (checked && !selectedValues?.includes(value)) {
+                setSelectedValues([...selectedValues, value]);
+            } else if (!checked && selectedValues?.includes(value)) {
+                const updatedSelectedValues = selectedValues.filter(
+                    (selectValue) => selectValue !== value
+                );
+                setSelectedValues(updatedSelectedValues);
+            }
         };
         return (
             <div className="koum-component-wrapper">
-                <p>Selected value: {selectedValue}</p>
+                <p>Selected value: {selectedValues.join(', ')}</p>
                 <div className="koum-group-checkbox">
                     <Checkbox
                         label={args.label}
                         id={args.id}
                         name={args.name}
                         disabled={args.disabled}
+                        checked={selectedValues.includes(args.id)}
                         onChange={handleChange}
                     />
                     <Checkbox
@@ -83,6 +89,7 @@ export const MultipleRadio: Story = {
                         id="lion-animal"
                         name={args.name}
                         disabled={args.disabled}
+                        checked={selectedValues.includes('lion-animal')}
                         onChange={handleChange}
                     />
                     <Checkbox
@@ -90,6 +97,7 @@ export const MultipleRadio: Story = {
                         id="bear-animal"
                         name={args.name}
                         disabled={args.disabled}
+                        checked={selectedValues.includes('bear-animal')}
                         onChange={handleChange}
                     />
                 </div>

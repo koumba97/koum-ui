@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '../../style/checkbox.css';
 
 export interface CheckboxProps {
@@ -7,7 +8,7 @@ export interface CheckboxProps {
     name: string;
     checked?: boolean;
     visibleLabel?: boolean;
-    onChange?: (id: string) => void;
+    onChange?: (id: string, checked: boolean) => void;
 }
 
 const Checkbox = ({
@@ -16,10 +17,15 @@ const Checkbox = ({
     name,
     id,
     visibleLabel = true,
-    checked,
+    checked = false,
     onChange,
     ...props
 }: CheckboxProps) => {
+    const [isChecked, setIsChecked] = useState(checked);
+
+    useEffect(() => {
+        setIsChecked(checked);
+    }, [checked]);
     return (
         <div className="koum-checkbox">
             <input
@@ -27,9 +33,9 @@ const Checkbox = ({
                 aria-label={!visibleLabel ? label : undefined}
                 name={name}
                 id={id}
-                checked={checked}
+                checked={isChecked}
                 disabled={disabled}
-                onChange={() => onChange && onChange(id)}
+                onChange={() => onChange && onChange(id, !isChecked)}
             />
             {visibleLabel ? <label htmlFor={id}>{label}</label> : null}
         </div>

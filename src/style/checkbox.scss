@@ -3,8 +3,79 @@
 .koum-group-checkbox {
     display: flex;
     flex-direction: column;
-    gap: 20;
+    gap: 10px;
 }
 
 .koum-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Nunito';
+    width: max-content;
+
+    input[type='checkbox'] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+
+        // focus
+        &:focus-visible + label::before {
+            outline: 3px solid lighten($focus-color, 10%);
+            outline-offset: 0px;
+        }
+
+        // checked
+        &:checked + label::before {
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+
+        &:checked + label::after {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: 10.5px;
+            width: 15px;
+            height: 15px;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            mask: url('../global/check.svg') no-repeat center;
+            mask-size: contain;
+
+            -webkit-mask: url('../global/check.svg') no-repeat center;
+            -webkit-mask-size: contain;
+        }
+
+        // disabled
+        &:disabled + label {
+            cursor: not-allowed;
+            color: $grey-400;
+        }
+
+        &:disabled + label::before {
+            background: $grey-200;
+            border-color: $grey-300;
+        }
+    }
+
+    label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        user-select: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            border: 2px solid $grey-400;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s;
+        }
+    }
 }

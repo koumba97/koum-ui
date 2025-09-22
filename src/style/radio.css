@@ -1,7 +1,7 @@
 .koum-group-radio {
   display: flex;
   flex-direction: column;
-  gap: 20;
+  gap: 10px;
 }
 
 .koum-radio {
@@ -10,7 +10,6 @@
   gap: 0.5rem;
   font-family: "Nunito";
   cursor: pointer;
-  margin: 4px;
   width: max-content;
 }
 .koum-radio label {
@@ -26,8 +25,8 @@
   transition: background 0.4s;
 }
 .koum-radio input[type=radio]:focus-visible + label::before {
-  outline-offset: 1px;
-  outline: solid 4px rgba(255, 125, 246.3812154696, 0.549);
+  outline-offset: 0px;
+  outline: solid 3px rgba(255, 125, 246.3812154696, 0.549);
 }
 .koum-radio input[type=radio]:checked + label::before {
   border-color: #272727;
