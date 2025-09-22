@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { fn } from 'storybook/test';
 
@@ -21,34 +21,56 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const SingleRadio: Story = {
     args: {
-        name: 'color',
-        label: 'Pink',
-        id: 'pink-color',
+        name: 'animal',
+        label: 'Tiger 🐯',
+        id: 'tiger-animal',
         disabled: false,
     },
-    render: (args) => (
-        <div className="koum-group-radio">
-            <Radio
-                {...args}
-                label={args.label}
-                id={args.id}
-                name={args.name}
-                disabled={args.disabled}
-            />
-            <Radio
-                label="Blue"
-                id="blue-color"
-                name={args.name}
-                disabled={args.disabled}
-            />
-            <Radio
-                label="Purple"
-                id="purple-color"
-                name={args.name}
-                disabled={args.disabled}
-            />
-        </div>
-    ),
+};
+
+export const MultipleRadio: Story = {
+    args: {
+        name: 'animal',
+        label: 'Tiger 🐯',
+        id: 'tiger-animal',
+        disabled: false,
+    },
+    render: (args) => {
+        const [selectedValue, setSelectedValue] = useState<undefined | string>(
+            undefined
+        );
+        const handleChange = (value: string) => {
+            setSelectedValue(value);
+        };
+        return (
+            <div className="koum-component-wrapper">
+                <p>Selected value: {selectedValue}</p>
+                <div className="koum-group-radio">
+                    <Radio
+                        label={args.label}
+                        id={args.id}
+                        name={args.name}
+                        disabled={args.disabled}
+                        onChange={() => handleChange(args.id)}
+                    />
+                    <Radio
+                        label="Lion 🦁"
+                        id="lion-animal"
+                        name={args.name}
+                        disabled={args.disabled}
+                        onChange={() => handleChange('lion-animal')}
+                    />
+                    <Radio
+                        label="Bear 🐻"
+                        id="bear-animal"
+                        name={args.name}
+                        disabled={args.disabled}
+                        onChange={() => handleChange('bear-animal')}
+                    />
+                </div>
+            </div>
+        );
+    },
 };

@@ -7,7 +7,7 @@ export interface RadioProps {
     name: string;
     checked?: boolean;
     visibleLabel?: boolean;
-    onChange?: () => void;
+    onChange?: (id: string) => void;
 }
 
 const Radio = ({
@@ -29,7 +29,7 @@ const Radio = ({
                 id={id}
                 checked={checked}
                 disabled={disabled}
-                onChange={onChange}
+                onChange={() => onChange && onChange(id)}
             />
             {visibleLabel ? <label htmlFor={id}>{label}</label> : null}
         </div>

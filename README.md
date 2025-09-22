@@ -40,6 +40,7 @@ Currently, Koum UI includes the following components:
 
 - Button
 - Label
+- Radio
 - (More coming soon...)
 
 ## 🧪 Development
