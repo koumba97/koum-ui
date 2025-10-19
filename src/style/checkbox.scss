@@ -53,8 +53,8 @@
         }
 
         &:disabled + label::before {
-            background: $grey-200;
-            border-color: $grey-300;
+            background: $grey-100;
+            border-color: $grey-200;
         }
     }
 

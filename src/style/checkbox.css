@@ -43,8 +43,8 @@
   color: #7f8898;
 }
 .koum-checkbox input[type=checkbox]:disabled + label::before {
-  background: #b1bdd2;
-  border-color: #99a3b4;
+  background: #c6d4ed;
+  border-color: #b1bdd2;
 }
 .koum-checkbox label {
   position: relative;

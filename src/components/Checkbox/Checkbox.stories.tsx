@@ -22,15 +22,30 @@ export const Default: Story = {
         name: 'animal',
         label: 'Tiger 🐯',
         id: 'tiger-animal',
+        disabled: false,
     },
-};
-
-export const Checked: Story = {
-    args: {
-        name: 'animal',
-        label: 'Tiger 🐯',
-        id: 'tiger-animal',
-        checked: true,
+    render: (args) => {
+        const [selectedValues, setSelectedValues] = useState<string[]>([]);
+        const handleChange = (value: string, checked: boolean) => {
+            if (checked && !selectedValues?.includes(value)) {
+                setSelectedValues([...selectedValues, value]);
+            } else if (!checked && selectedValues?.includes(value)) {
+                const updatedSelectedValues = selectedValues.filter(
+                    (selectValue) => selectValue !== value
+                );
+                setSelectedValues(updatedSelectedValues);
+            }
+        };
+        return (
+            <Checkbox
+                label={args.label}
+                id={args.id}
+                name={args.name}
+                disabled={args.disabled}
+                checked={selectedValues.includes(args.id)}
+                onChange={handleChange}
+            />
+        );
     },
 };
 
