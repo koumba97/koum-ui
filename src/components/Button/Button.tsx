@@ -8,10 +8,11 @@ export interface ButtonProps {
     disabled?: boolean;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
-    style?: 'filled' | 'outlined';
+    buttonStyle?: 'filled' | 'outlined';
     icon?: React.ReactNode;
     label: string;
     visibleLabel?: boolean;
+    additionalClass?: string;
     onClick?: () => void;
 }
 
@@ -21,14 +22,15 @@ const Button = ({
     disabled = false,
     shape = 'round',
     size = 'medium',
-    style = 'filled',
+    buttonStyle = 'filled',
     icon,
     label,
+    additionalClass,
     visibleLabel = true,
     onClick,
     ...props
 }: ButtonProps) => {
-    const buttonStyle = style === 'outlined' ? 'outlined' : null;
+    const style = buttonStyle === 'outlined' ? 'outlined' : null;
     const buttonShape = shape === 'square' ? 'square' : null;
     const iconButton = !visibleLabel && icon ? 'icon-button' : null;
     return (
@@ -38,9 +40,10 @@ const Button = ({
                 'koum-button',
                 size,
                 color,
-                buttonStyle,
+                style,
                 buttonShape,
                 iconButton,
+                additionalClass,
             ].join(' ')}
             aria-label={label}
             disabled={disabled}

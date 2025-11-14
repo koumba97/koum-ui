@@ -48,7 +48,7 @@ export const Outlined: Story = {
     args: {
         children: 'Button',
         label: 'Button',
-        style: 'outlined',
+        buttonStyle: 'outlined',
     },
 };
 
@@ -77,7 +77,7 @@ export const ButtonWithIcon: Story = {
                     height={20}
                     viewBox="0 0 20 20"
                     color={
-                        args.style === 'outlined'
+                        args.buttonStyle === 'outlined'
                             ? ThemeColorHex[args.color ?? 'primary']
                             : 'white'
                     }
