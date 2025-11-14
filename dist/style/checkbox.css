@@ -1,0 +1,69 @@
+.koum-group-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.koum-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Nunito";
+  width: max-content;
+}
+.koum-checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.koum-checkbox input[type=checkbox]:focus-visible + label::before {
+  outline: 3px solid rgba(255, 125, 246.3812154696, 0.549);
+  outline-offset: 0px;
+}
+.koum-checkbox input[type=checkbox]:checked + label::before {
+  background-color: #272727;
+  border-color: #272727;
+}
+.koum-checkbox input[type=checkbox]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 10.5px;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  mask: url("../global/check.svg") no-repeat center;
+  mask-size: contain;
+  -webkit-mask: url("../global/check.svg") no-repeat center;
+  -webkit-mask-size: contain;
+}
+.koum-checkbox input[type=checkbox]:disabled + label {
+  cursor: not-allowed;
+  color: #7f8898;
+}
+.koum-checkbox input[type=checkbox]:disabled + label::before {
+  background: #c6d4ed;
+  border-color: #b1bdd2;
+}
+.koum-checkbox label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+.koum-checkbox label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #7f8898;
+  border-radius: 6px;
+  background: white;
+  transition: all 0.2s;
+}
+
+/*# sourceMappingURL=checkbox.css.map */

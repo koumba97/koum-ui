@@ -7,11 +7,12 @@ export interface ButtonProps {
     disabled?: boolean;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
-    style?: 'filled' | 'outlined';
+    buttonStyle?: 'filled' | 'outlined';
     icon?: React.ReactNode;
     label: string;
     visibleLabel?: boolean;
+    additionalClass?: string;
     onClick?: () => void;
 }
-declare const Button: ({ children, color, disabled, shape, size, style, icon, label, visibleLabel, onClick, ...props }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
+declare const Button: ({ children, color, disabled, shape, size, buttonStyle, icon, label, additionalClass, visibleLabel, onClick, ...props }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default Button;

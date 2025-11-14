@@ -2,6 +2,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { fn } from 'storybook/test';
 import Button from './Button';
 import EarthSVG from '../../global/Earth';
+import { ThemeColorHex } from '../../global/types';
 const meta = {
     title: 'Example/Button',
     component: Button,
@@ -13,7 +14,6 @@ const meta = {
     args: { onClick: fn() },
 };
 export default meta;
-//type Story = StoryObj<typeof Button>;
 export const Large = {
     args: {
         children: 'Button',
@@ -39,7 +39,7 @@ export const Outlined = {
     args: {
         children: 'Button',
         label: 'Button',
-        style: 'outlined',
+        buttonStyle: 'outlined',
     },
 };
 export const Square = {
@@ -57,7 +57,12 @@ export const ButtonWithIcon = {
         shape: 'square',
         visibleLabel: true,
     },
-    render: (args) => (_jsx(Button, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: "white" }) }))),
+    render: (args) => {
+        var _a;
+        return (_jsx(Button, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: args.buttonStyle === 'outlined'
+                    ? ThemeColorHex[(_a = args.color) !== null && _a !== void 0 ? _a : 'primary']
+                    : 'white' }) })));
+    },
 };
 export const Icon = {
     args: {

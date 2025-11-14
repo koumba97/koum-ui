@@ -1,7 +1,8 @@
-export type ThemeColor = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'neutral';
+export type ThemeColor = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info' | 'neutral';
 export declare enum ThemeColorHex {
     primary = "#272727",
     secondary = "#6146ff",
+    tertiary = "#ff8bda",
     info = "#61a0ff",
     success = "#4bc34b",
     warning = "#ffb52b",
