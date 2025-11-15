@@ -1,10 +1,7 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { fn } from 'storybook/test';
-
 import Input from './Input';
 import EarthSVG from '../../global/Earth';
-
 const meta = {
     title: 'Example/Input',
     component: Input,
@@ -14,66 +11,46 @@ const meta = {
     },
     tags: ['autodocs'],
     args: { onChange: fn() },
-} satisfies Meta<typeof Input>;
-
+};
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Large: Story = {
+export const Large = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
         size: 'large',
     },
 };
-
-export const Medium: Story = {
+export const Medium = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
         size: 'medium',
     },
 };
-
-export const Small: Story = {
+export const Small = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
         size: 'small',
     },
 };
-
-export const Square: Story = {
+export const Square = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
         shape: 'square',
     },
 };
-
-export const InputWithIcon: Story = {
+export const InputWithIcon = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
         shape: 'square',
         visibleLabel: true,
     },
-    render: (args) => (
-        <Input
-            {...args}
-            icon={
-                <EarthSVG
-                    width={20}
-                    height={20}
-                    viewBox="0 0 20 20"
-                    color="#b1bdd2"
-                />
-            }
-        />
-    ),
+    render: (args) => (_jsx(Input, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: "#b1bdd2" }) }))),
 };
-
-export const Disabled: Story = {
+export const Disabled = {
     args: {
         disabled: true,
         label: 'Search',

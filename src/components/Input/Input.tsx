@@ -38,8 +38,8 @@ const Input = ({
 }: InputProps) => {
     const reactId = React.useId();
     const inputId = id ? id : reactId;
-    const inputShape = shape === 'square' ? 'square' : null;
-    const iconInput = !visibleLabel && icon ? 'icon-input' : null;
+    const inputShape = shape === 'round' && 'round';
+    const iconInput = !visibleLabel && icon && 'icon-input';
     return (
         <div className="koum-input-wrapper">
             {visibleLabel ? <label htmlFor={inputId}>{label} </label> : null}
@@ -51,6 +51,7 @@ const Input = ({
                     inputShape,
                     iconInput,
                     additionalClass,
+                    icon && 'icon',
                 ].join(' ')}
                 style={{
                     flexDirection:

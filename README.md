@@ -42,6 +42,7 @@ Currently, Koum UI includes the following components:
 - Label
 - Radio
 - Checkbox
+- Input
 - (More coming soon...)
 
 ## 🧪 Development

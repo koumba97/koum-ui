@@ -1,3 +1,5 @@
 import Button from './components/Button/index';
 import Label from './components/Label/index';
-export { Button, Label };
+import Radio from './components/Radio';
+import Checkbox from './components/Checkbox';
+export { Button, Label, Radio, Checkbox };
