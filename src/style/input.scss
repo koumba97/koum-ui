@@ -1,0 +1,50 @@
+@import './design-tokens.scss';
+
+$border-width: 2px;
+$round-border-radius: 20px;
+$square-border-radius: 10px;
+.koum-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito';
+
+    label {
+        font-size: 12px;
+        color: $neutral-color;
+    }
+    .koum-input {
+        display: flex;
+        align-items: center;
+        border: solid 2px;
+        border-radius: $square-border-radius;
+        background-color: white;
+
+        &:focus-within {
+            outline-offset: 1px;
+
+            outline: solid 4px lighten($color: $focus-color, $amount: 10%);
+        }
+        input {
+            outline: none;
+        }
+
+        &.small {
+            padding: 10px 16px;
+            font-size: 12px;
+        }
+        &.medium {
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+        &.large {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+    }
+    input {
+        border: none;
+        outline: none;
+    }
+
+    // SIZES
+}

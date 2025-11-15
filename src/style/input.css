@@ -1,0 +1,41 @@
+.koum-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito";
+}
+.koum-input-wrapper label {
+  font-size: 12px;
+  color: #99a3b4;
+}
+.koum-input-wrapper .koum-input {
+  display: flex;
+  align-items: center;
+  border: solid 2px;
+  border-radius: 10px;
+  background-color: white;
+}
+.koum-input-wrapper .koum-input:focus-within {
+  outline-offset: 1px;
+  outline: solid 4px rgba(255, 125, 246.3812154696, 0.549);
+}
+.koum-input-wrapper .koum-input input {
+  outline: none;
+}
+.koum-input-wrapper .koum-input.small {
+  padding: 10px 16px;
+  font-size: 12px;
+}
+.koum-input-wrapper .koum-input.medium {
+  padding: 12px 20px;
+  font-size: 14px;
+}
+.koum-input-wrapper .koum-input.large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+.koum-input-wrapper input {
+  border: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=input.css.map */
