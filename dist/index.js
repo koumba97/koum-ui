@@ -1,3 +1,4 @@
+// COMPONENTS
 import Button from './components/Button/index';
 import Label from './components/Label/index';
 import Radio from './components/Radio';

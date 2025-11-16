@@ -1,5 +1,5 @@
-export type ThemeColor = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info' | 'neutral';
-export declare enum ThemeColorHex {
+export type KoumThemeColor = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'info' | 'neutral';
+export declare enum KoumThemeColorHex {
     primary = "#272727",
     secondary = "#6146ff",
     tertiary = "#ff8bda",

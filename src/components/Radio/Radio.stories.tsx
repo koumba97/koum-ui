@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 
 import RadioButton from './Radio';
 import EarthSVG from '../../global/Earth';
-import { ThemeColorHex } from '../../global/types';
+import { KoumThemeColorHex } from '../../global/types';
 import Radio from './Radio';
 
 const meta = {

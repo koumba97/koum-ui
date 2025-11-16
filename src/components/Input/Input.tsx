@@ -1,12 +1,12 @@
 import React from 'react';
-import { ThemeColor } from '../../global/types';
+import { KoumThemeColor } from '../../global/types';
 import '../../style/input.css';
 
 export interface InputProps {
     value?: string | number;
     type?: 'text' | 'number';
     placeholder?: string;
-    color?: ThemeColor;
+    color?: KoumThemeColor;
     disabled?: boolean;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';

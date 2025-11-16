@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 
 import Label from './Label';
 import EarthSVG from '../../global/Earth';
-import { ThemeColorHex } from '../../global/types';
+import { KoumThemeColorHex } from '../../global/types';
 
 const meta = {
     title: 'Example/Label',
@@ -91,7 +91,7 @@ export const ButtonWithIcon: Story = {
                     width={15}
                     height={15}
                     viewBox="0 0 20 20"
-                    color={ThemeColorHex[args.color ?? 'primary']}
+                    color={KoumThemeColorHex[args.color ?? 'primary']}
                 />
             }
         />

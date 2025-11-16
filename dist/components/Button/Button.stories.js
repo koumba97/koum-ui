@@ -2,7 +2,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { fn } from 'storybook/test';
 import Button from './Button';
 import EarthSVG from '../../global/Earth';
-import { ThemeColorHex } from '../../global/types';
+import { KoumThemeColorHex } from '../../global/types';
 const meta = {
     title: 'Example/Button',
     component: Button,
@@ -60,7 +60,7 @@ export const ButtonWithIcon = {
     render: (args) => {
         var _a;
         return (_jsx(Button, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: args.buttonStyle === 'outlined'
-                    ? ThemeColorHex[(_a = args.color) !== null && _a !== void 0 ? _a : 'primary']
+                    ? KoumThemeColorHex[(_a = args.color) !== null && _a !== void 0 ? _a : 'primary']
                     : 'white' }) })));
     },
 };

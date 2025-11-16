@@ -1,9 +1,9 @@
 import React from 'react';
-import { ThemeColor } from '../../global/types';
+import { KoumThemeColor } from '../../global/types';
 import '../../style/button.css';
 export interface ButtonProps {
     children?: React.ReactNode;
-    color?: ThemeColor;
+    color?: KoumThemeColor;
     disabled?: boolean;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';

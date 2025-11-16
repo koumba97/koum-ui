@@ -1,11 +1,11 @@
 import React from 'react';
-import { ThemeColor } from '../../global/types';
+import { KoumThemeColor } from '../../global/types';
 import '../../style/label.css';
 export interface LabelProps {
     action?: 'none' | 'delete' | 'check';
     deleteLabel?: string;
     checkLabel?: string;
-    color?: ThemeColor;
+    color?: KoumThemeColor;
     id?: string;
     icon?: React.ReactNode;
     isChecked?: boolean;

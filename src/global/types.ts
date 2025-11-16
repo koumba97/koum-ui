@@ -1,4 +1,4 @@
-export type ThemeColor =
+export type KoumThemeColor =
     | 'primary'
     | 'secondary'
     | 'tertiary'
@@ -8,7 +8,7 @@ export type ThemeColor =
     | 'info'
     | 'neutral';
 
-export enum ThemeColorHex {
+export enum KoumThemeColorHex {
     primary = '#272727',
     secondary = '#6146ff',
     tertiary = '#ff8bda',

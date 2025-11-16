@@ -3,7 +3,7 @@ import React from 'react';
 import { fn } from 'storybook/test';
 import Label from './Label';
 import EarthSVG from '../../global/Earth';
-import { ThemeColorHex } from '../../global/types';
+import { KoumThemeColorHex } from '../../global/types';
 const meta = {
     title: 'Example/Label',
     component: Label,
@@ -67,6 +67,6 @@ export const ButtonWithIcon = {
     },
     render: (args) => {
         var _a;
-        return (_jsx(Label, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 15, height: 15, viewBox: "0 0 20 20", color: ThemeColorHex[(_a = args.color) !== null && _a !== void 0 ? _a : 'primary'] }) })));
+        return (_jsx(Label, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 15, height: 15, viewBox: "0 0 20 20", color: KoumThemeColorHex[(_a = args.color) !== null && _a !== void 0 ? _a : 'primary'] }) })));
     },
 };

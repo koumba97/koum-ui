@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeColor } from '../../global/types';
+import { KoumThemeColor } from '../../global/types';
 import '../../style/label.css';
 import CloseSVG from '../../global/Close';
 
@@ -7,7 +7,7 @@ export interface LabelProps {
     action?: 'none' | 'delete' | 'check';
     deleteLabel?: string;
     checkLabel?: string;
-    color?: ThemeColor;
+    color?: KoumThemeColor;
     id?: string;
     icon?: React.ReactNode;
     isChecked?: boolean;
