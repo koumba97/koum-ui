@@ -11,11 +11,12 @@ export interface LabelProps {
     isChecked?: boolean;
     isDeleted?: boolean;
     label: string;
+    additionalClass?: string;
     onCheck?: () => void;
     onDelete?: () => void;
     shape?: 'round' | 'square';
     size?: 'small' | 'medium' | 'large';
     visibleLabel?: boolean;
 }
-declare const Label: ({ label, action, checkLabel, color, deleteLabel, icon, id, isChecked, onCheck, onDelete, shape, size, ...props }: LabelProps) => import("react/jsx-runtime").JSX.Element;
+declare const Label: ({ label, action, checkLabel, color, deleteLabel, additionalClass, icon, id, isChecked, onCheck, onDelete, shape, size, ...props }: LabelProps) => import("react/jsx-runtime").JSX.Element;
 export default Label;

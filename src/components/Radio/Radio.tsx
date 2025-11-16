@@ -7,6 +7,7 @@ export interface RadioProps {
     name: string;
     checked?: boolean;
     visibleLabel?: boolean;
+    additionalClass?: string;
     onChange?: (id: string) => void;
 }
 
@@ -16,12 +17,13 @@ const Radio = ({
     name,
     id,
     visibleLabel = true,
+    additionalClass,
     checked,
     onChange,
     ...props
 }: RadioProps) => {
     return (
-        <div className="koum-radio">
+        <div className={['koum-radio', additionalClass].join(' ')}>
             <input
                 type="radio"
                 aria-label={!visibleLabel ? label : undefined}

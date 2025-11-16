@@ -16,7 +16,7 @@ export interface InputProps {
     label: string;
     visibleLabel?: boolean;
     additionalClass?: string;
-    onChange?: () => void;
+    onChange?: (value: string | number) => void;
 }
 
 const Input = ({
@@ -40,6 +40,11 @@ const Input = ({
     const inputId = id ? id : reactId;
     const inputShape = shape === 'round' && 'round';
     const iconInput = !visibleLabel && icon && 'icon-input';
+
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = type === 'number' ? Number(e.target.value) : e.target.value;
+        if (onChange) onChange(val);
+    };
     return (
         <div className="koum-input-wrapper">
             {visibleLabel ? <label htmlFor={inputId}>{label} </label> : null}
@@ -66,7 +71,7 @@ const Input = ({
                     placeholder={placeholder}
                     aria-disabled={disabled}
                     aria-label={!visibleLabel ? label : undefined}
-                    onChange={onChange}
+                    onChange={handleInput}
                 />
                 {icon && icon}
             </div>

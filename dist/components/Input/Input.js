@@ -18,6 +18,11 @@ const Input = (_a) => {
     const inputId = id ? id : reactId;
     const inputShape = shape === 'round' && 'round';
     const iconInput = !visibleLabel && icon && 'icon-input';
+    const handleInput = (e) => {
+        const val = type === 'number' ? Number(e.target.value) : e.target.value;
+        if (onChange)
+            onChange(val);
+    };
     return (_jsxs("div", Object.assign({ className: "koum-input-wrapper" }, { children: [visibleLabel ? _jsxs("label", Object.assign({ htmlFor: inputId }, { children: [label, " "] })) : null, _jsxs("div", Object.assign({ className: [
                     'koum-input',
                     size,
@@ -28,6 +33,6 @@ const Input = (_a) => {
                     icon && 'icon',
                 ].join(' '), style: {
                     flexDirection: icon && iconPosition === 'left' ? 'row-reverse' : 'row',
-                } }, { children: [_jsx("input", { type: type, id: inputId, value: value, disabled: disabled, placeholder: placeholder, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined, onChange: onChange }), icon && icon] }))] })));
+                } }, { children: [_jsx("input", { type: type, id: inputId, value: value, disabled: disabled, placeholder: placeholder, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined, onChange: handleInput }), icon && icon] }))] })));
 };
 export default Input;

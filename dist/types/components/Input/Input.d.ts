@@ -15,7 +15,7 @@ export interface InputProps {
     label: string;
     visibleLabel?: boolean;
     additionalClass?: string;
-    onChange?: () => void;
+    onChange?: (value: string | number) => void;
 }
 declare const Input: ({ value, id, color, type, disabled, placeholder, shape, size, icon, iconPosition, label, additionalClass, visibleLabel, onChange, ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
 export default Input;

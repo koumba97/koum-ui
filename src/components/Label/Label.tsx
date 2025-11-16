@@ -13,6 +13,7 @@ export interface LabelProps {
     isChecked?: boolean;
     isDeleted?: boolean;
     label: string;
+    additionalClass?: string;
     onCheck?: () => void;
     onDelete?: () => void;
     shape?: 'round' | 'square';
@@ -26,6 +27,7 @@ const Label = ({
     checkLabel = `select ${label}`,
     color = 'primary',
     deleteLabel = `delete ${label}`,
+    additionalClass,
     icon,
     id = label,
     isChecked,
@@ -43,6 +45,7 @@ const Label = ({
                 'koum-label',
                 size,
                 color,
+                additionalClass,
                 labelShape,
                 labelAction,
             ].join(' ')}
