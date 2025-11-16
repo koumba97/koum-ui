@@ -81,7 +81,15 @@ $label-variants: (
 
     @each $variant, $props in $label-variants {
         &.#{$variant}:not(:disabled) {
-            background-color: rgba(map-get($props, backgroundColor), 0.2);
+            &.transparent {
+                background-color: rgba(map-get($props, backgroundColor), 0.2);
+            }
+            &:not(.transparent) {
+                background-color: lighten(
+                    map-get($props, backgroundColor),
+                    30%
+                );
+            }
 
             color: darken(map-get($props, text), 0.2);
 

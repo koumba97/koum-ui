@@ -8,5 +8,5 @@ import Input from './components/Input';
 // TYPES
 import { KoumThemeColor, KoumThemeColorHex } from './global/types';
 
-export { Button, Label, Radio, Checkbox, Input };
-export type { KoumThemeColor, KoumThemeColorHex };
+export { Button, Label, Radio, Checkbox, Input, KoumThemeColorHex };
+export type { KoumThemeColor };

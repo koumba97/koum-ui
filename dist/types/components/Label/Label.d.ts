@@ -5,12 +5,14 @@ export interface LabelProps {
     action?: 'none' | 'delete' | 'check';
     deleteLabel?: string;
     checkLabel?: string;
+    transparent?: boolean;
     color?: KoumThemeColor;
     id?: string;
     icon?: React.ReactNode;
     isChecked?: boolean;
     isDeleted?: boolean;
-    label: string;
+    children?: React.ReactNode;
+    label?: string;
     additionalClass?: string;
     onCheck?: () => void;
     onDelete?: () => void;
@@ -18,5 +20,5 @@ export interface LabelProps {
     size?: 'small' | 'medium' | 'large';
     visibleLabel?: boolean;
 }
-declare const Label: ({ label, action, checkLabel, color, deleteLabel, additionalClass, icon, id, isChecked, onCheck, onDelete, shape, size, ...props }: LabelProps) => import("react/jsx-runtime").JSX.Element;
+declare const Label: ({ label, transparent, action, checkLabel, color, deleteLabel, additionalClass, icon, id, isChecked, children, onCheck, onDelete, shape, size, ...props }: LabelProps) => import("react/jsx-runtime").JSX.Element;
 export default Label;

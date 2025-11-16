@@ -34,8 +34,13 @@
   border-radius: 4px;
 }
 .koum-label.primary:not(:disabled) {
-  background-color: rgba(39, 39, 39, 0.2);
   color: rgb(38.49, 38.49, 38.49);
+}
+.koum-label.primary:not(:disabled).transparent {
+  background-color: rgba(39, 39, 39, 0.2);
+}
+.koum-label.primary:not(:disabled):not(.transparent) {
+  background-color: rgb(115.5, 115.5, 115.5);
 }
 .koum-label.primary:not(:disabled)::before {
   background-color: silver;
@@ -47,8 +52,13 @@
   background-color: rgba(39, 39, 39, 0.2);
 }
 .koum-label.secondary:not(:disabled) {
-  background-color: rgba(97, 70, 255, 0.2);
   color: rgb(96.1288648649, 68.98, 255);
+}
+.koum-label.secondary:not(:disabled).transparent {
+  background-color: rgba(97, 70, 255, 0.2);
+}
+.koum-label.secondary:not(:disabled):not(.transparent) {
+  background-color: rgb(227.6702702703, 223, 255);
 }
 .koum-label.secondary:not(:disabled)::before {
   background-color: rgb(184.1135135135, 172, 255);
@@ -60,8 +70,13 @@
   background-color: rgba(97, 70, 255, 0.2);
 }
 .koum-label.tertiary:not(:disabled) {
-  background-color: rgba(255, 139, 218, 0.2);
   color: rgb(255, 137.98, 217.6746551724);
+}
+.koum-label.tertiary:not(:disabled).transparent {
+  background-color: rgba(255, 139, 218, 0.2);
+}
+.koum-label.tertiary:not(:disabled):not(.transparent) {
+  background-color: white;
 }
 .koum-label.tertiary:not(:disabled)::before {
   background-color: rgb(255, 241, 250.5344827586);
@@ -73,8 +88,13 @@
   background-color: rgba(255, 139, 218, 0.2);
 }
 .koum-label.info:not(:disabled) {
-  background-color: rgba(97, 160, 255, 0.2);
   color: rgb(95.98, 159.3867088608, 255);
+}
+.koum-label.info:not(:disabled).transparent {
+  background-color: rgba(97, 160, 255, 0.2);
+}
+.koum-label.info:not(:disabled):not(.transparent) {
+  background-color: rgb(250, 251.9936708861, 255);
 }
 .koum-label.info:not(:disabled)::before {
   background-color: rgb(199, 221.3291139241, 255);
@@ -86,8 +106,13 @@
   background-color: rgba(97, 160, 255, 0.2);
 }
 .koum-label.success:not(:disabled) {
-  background-color: rgba(75, 195, 75, 0.2);
   color: rgb(74.235, 194.745, 74.235);
+}
+.koum-label.success:not(:disabled).transparent {
+  background-color: rgba(75, 195, 75, 0.2);
+}
+.koum-label.success:not(:disabled):not(.transparent) {
+  background-color: rgb(189.75, 233.25, 189.75);
 }
 .koum-label.success:not(:disabled)::before {
   background-color: rgb(189.75, 233.25, 189.75);
@@ -99,8 +124,13 @@
   background-color: rgba(75, 195, 75, 0.2);
 }
 .koum-label.warning:not(:disabled) {
-  background-color: rgba(255, 181, 43, 0.2);
   color: rgb(255, 180.6439622642, 41.98);
+}
+.koum-label.warning:not(:disabled).transparent {
+  background-color: rgba(255, 181, 43, 0.2);
+}
+.koum-label.warning:not(:disabled):not(.transparent) {
+  background-color: rgb(255, 234.4056603774, 196);
 }
 .koum-label.warning:not(:disabled)::before {
   background-color: rgb(255, 216.6037735849, 145);
@@ -112,8 +142,13 @@
   background-color: rgba(255, 181, 43, 0.2);
 }
 .koum-label.danger:not(:disabled) {
-  background-color: rgba(185, 38, 38, 0.2);
   color: rgb(184.1538116592, 37.8261883408, 37.8261883408);
+}
+.koum-label.danger:not(:disabled).transparent {
+  background-color: rgba(185, 38, 38, 0.2);
+}
+.koum-label.danger:not(:disabled):not(.transparent) {
+  background-color: rgb(232.1659192825, 143.8340807175, 143.8340807175);
 }
 .koum-label.danger:not(:disabled)::before {
   background-color: rgb(240.8565022422, 186.1434977578, 186.1434977578);
@@ -125,8 +160,13 @@
   background-color: rgba(185, 38, 38, 0.2);
 }
 .koum-label.neutral:not(:disabled) {
-  background-color: rgba(153, 163, 180, 0.2);
   color: rgb(152.4122033898, 162.4698305085, 179.5677966102);
+}
+.koum-label.neutral:not(:disabled).transparent {
+  background-color: rgba(153, 163, 180, 0.2);
+}
+.koum-label.neutral:not(:disabled):not(.transparent) {
+  background-color: rgb(241.1694915254, 242.5254237288, 244.8305084746);
 }
 .koum-label.neutral:not(:disabled)::before {
   background-color: rgb(211.7796610169, 216.0169491525, 223.2203389831);

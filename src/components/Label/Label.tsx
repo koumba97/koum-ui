@@ -7,12 +7,14 @@ export interface LabelProps {
     action?: 'none' | 'delete' | 'check';
     deleteLabel?: string;
     checkLabel?: string;
+    transparent?: boolean;
     color?: KoumThemeColor;
     id?: string;
     icon?: React.ReactNode;
     isChecked?: boolean;
     isDeleted?: boolean;
-    label: string;
+    children?: React.ReactNode;
+    label?: string;
     additionalClass?: string;
     onCheck?: () => void;
     onDelete?: () => void;
@@ -23,6 +25,7 @@ export interface LabelProps {
 
 const Label = ({
     label,
+    transparent,
     action = 'none',
     checkLabel = `select ${label}`,
     color = 'primary',
@@ -31,6 +34,7 @@ const Label = ({
     icon,
     id = label,
     isChecked,
+    children,
     onCheck,
     onDelete,
     shape = 'round',
@@ -48,11 +52,13 @@ const Label = ({
                 additionalClass,
                 labelShape,
                 labelAction,
+                transparent && 'transparent',
             ].join(' ')}
         >
             <span>
                 {icon && <span className="icon">{icon}</span>}
                 {label}
+                {children}
             </span>
             {action === 'delete' ? (
                 <button
