@@ -77,6 +77,7 @@
 }
 .koum-label.tertiary:not(:disabled):not(.transparent) {
   background-color: white;
+  background-color: rgb(255, 215.5, 242.400862069);
 }
 .koum-label.tertiary:not(:disabled)::before {
   background-color: rgb(255, 241, 250.5344827586);
@@ -95,6 +96,7 @@
 }
 .koum-label.info:not(:disabled):not(.transparent) {
   background-color: rgb(250, 251.9936708861, 255);
+  background-color: rgb(199, 221.3291139241, 255);
 }
 .koum-label.info:not(:disabled)::before {
   background-color: rgb(199, 221.3291139241, 255);
@@ -167,6 +169,7 @@
 }
 .koum-label.neutral:not(:disabled):not(.transparent) {
   background-color: rgb(241.1694915254, 242.5254237288, 244.8305084746);
+  background-color: rgb(226.4745762712, 229.2711864407, 234.0254237288);
 }
 .koum-label.neutral:not(:disabled)::before {
   background-color: rgb(211.7796610169, 216.0169491525, 223.2203389831);

@@ -89,6 +89,25 @@ $label-variants: (
                     map-get($props, backgroundColor),
                     30%
                 );
+
+                @if $variant == 'tertiary' {
+                    background-color: lighten(
+                        map-get($props, backgroundColor),
+                        15%
+                    );
+                }
+                @if $variant == 'info' {
+                    background-color: lighten(
+                        map-get($props, backgroundColor),
+                        20%
+                    );
+                }
+                @if $variant == 'neutral' {
+                    background-color: lighten(
+                        map-get($props, backgroundColor),
+                        25%
+                    );
+                }
             }
 
             color: darken(map-get($props, text), 0.2);
