@@ -1,0 +1,64 @@
+.koum-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito";
+  width: 100%;
+}
+.koum-input-wrapper label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #4e545d;
+}
+.koum-input-wrapper:has(input:disabled) label {
+  color: #c6d4ed;
+}
+.koum-input-wrapper .koum-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: solid 2px #b1bdd2;
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  outline: 0px rgba(255, 125, 246.3812154696, 0.549);
+  transition: 0.3s border, 0.3s border-color, 0.3s outline;
+}
+.koum-input-wrapper .koum-input.round {
+  border-radius: 50px;
+}
+.koum-input-wrapper .koum-input:has(input:focus-visible) {
+  outline-offset: 1px;
+  outline: solid 4px rgba(255, 125, 246.3812154696, 0.549);
+  border-color: #272727;
+}
+.koum-input-wrapper .koum-input input {
+  outline: none;
+  width: 100%;
+}
+.koum-input-wrapper .koum-input input::placeholder {
+  color: #b1bdd2;
+  opacity: 1;
+}
+.koum-input-wrapper .koum-input:has(input:disabled) {
+  background-color: #eaecf0;
+  border-color: #eaecf0;
+  cursor: not-allowed;
+}
+.koum-input-wrapper .koum-input:has(input:disabled) input {
+  background-color: unset;
+  cursor: not-allowed;
+}
+.koum-input-wrapper .koum-input.small {
+  padding: 6px 6px;
+  font-size: 12px;
+}
+.koum-input-wrapper .koum-input.medium {
+  padding: 8px 8px;
+  font-size: 14px;
+}
+.koum-input-wrapper .koum-input.large {
+  padding: 12px 12px;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=input-wrapper.css.map */

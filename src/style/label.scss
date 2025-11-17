@@ -110,7 +110,7 @@ $label-variants: (
                 }
             }
 
-            color: darken(map-get($props, text), 0.2);
+            color: darken(map-get($props, text), 35%);
 
             &::before {
                 background-color: lighten(

@@ -1,0 +1,76 @@
+@import './design-tokens.scss';
+
+$border-width: 2px;
+$round-border-radius: 20px;
+$square-border-radius: 10px;
+.koum-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito';
+    width: 100%;
+
+    label {
+        font-size: 12px;
+        margin-bottom: 6px;
+        color: $grey-800;
+    }
+    &:has(input:disabled) {
+        label {
+            color: $grey-100;
+        }
+    }
+    .koum-input {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        border: solid 2px $grey-200;
+        border-radius: $square-border-radius;
+        background-color: white;
+        width: 100%;
+        outline: 0px lighten($color: $focus-color, $amount: 10%);
+        transition:
+            0.3s border,
+            0.3s border-color,
+            0.3s outline;
+
+        &.round {
+            border-radius: 50px;
+        }
+
+        &:has(input:focus-visible) {
+            outline-offset: 1px;
+            outline: solid 4px lighten($color: $focus-color, $amount: 10%);
+            border-color: $primary-color;
+        }
+        input {
+            outline: none;
+            width: 100%;
+            &::placeholder {
+                color: $grey-200;
+                opacity: 1;
+            }
+        }
+
+        &:has(input:disabled) {
+            background-color: $grey-50;
+            border-color: $grey-50;
+            cursor: not-allowed;
+            input {
+                background-color: unset;
+                cursor: not-allowed;
+            }
+        }
+        &.small {
+            padding: 6px 6px;
+            font-size: 12px;
+        }
+        &.medium {
+            padding: 8px 8px;
+            font-size: 14px;
+        }
+        &.large {
+            padding: 12px 12px;
+            font-size: 16px;
+        }
+    }
+}

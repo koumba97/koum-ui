@@ -34,7 +34,7 @@
   border-radius: 4px;
 }
 .koum-label.primary:not(:disabled) {
-  color: rgb(38.49, 38.49, 38.49);
+  color: black;
 }
 .koum-label.primary:not(:disabled).transparent {
   background-color: rgba(39, 39, 39, 0.2);
@@ -52,7 +52,7 @@
   background-color: rgba(39, 39, 39, 0.2);
 }
 .koum-label.secondary:not(:disabled) {
-  color: rgb(96.1288648649, 68.98, 255);
+  color: rgb(21.3810810811, 0, 146.5);
 }
 .koum-label.secondary:not(:disabled).transparent {
   background-color: rgba(97, 70, 255, 0.2);
@@ -70,7 +70,7 @@
   background-color: rgba(97, 70, 255, 0.2);
 }
 .koum-label.tertiary:not(:disabled) {
-  color: rgb(255, 137.98, 217.6746551724);
+  color: rgb(215.5, 0, 146.7629310345);
 }
 .koum-label.tertiary:not(:disabled).transparent {
   background-color: rgba(255, 139, 218, 0.2);
@@ -89,7 +89,7 @@
   background-color: rgba(255, 139, 218, 0.2);
 }
 .koum-label.info:not(:disabled) {
-  color: rgb(95.98, 159.3867088608, 255);
+  color: rgb(0, 69.1803797468, 173.5);
 }
 .koum-label.info:not(:disabled).transparent {
   background-color: rgba(97, 160, 255, 0.2);
@@ -108,7 +108,7 @@
   background-color: rgba(97, 160, 255, 0.2);
 }
 .koum-label.success:not(:disabled) {
-  color: rgb(74.235, 194.745, 74.235);
+  color: rgb(22.875, 68.625, 22.875);
 }
 .koum-label.success:not(:disabled).transparent {
   background-color: rgba(75, 195, 75, 0.2);
@@ -126,7 +126,7 @@
   background-color: rgba(75, 195, 75, 0.2);
 }
 .koum-label.warning:not(:disabled) {
-  color: rgb(255, 180.6439622642, 41.98);
+  color: rgb(119.5, 77.7877358491, 0);
 }
 .koum-label.warning:not(:disabled).transparent {
   background-color: rgba(255, 181, 43, 0.2);
@@ -144,7 +144,7 @@
   background-color: rgba(255, 181, 43, 0.2);
 }
 .koum-label.danger:not(:disabled) {
-  color: rgb(184.1538116592, 37.8261883408, 37.8261883408);
+  color: rgb(36.9170403587, 7.5829596413, 7.5829596413);
 }
 .koum-label.danger:not(:disabled).transparent {
   background-color: rgba(185, 38, 38, 0.2);
@@ -162,7 +162,7 @@
   background-color: rgba(185, 38, 38, 0.2);
 }
 .koum-label.neutral:not(:disabled) {
-  color: rgb(152.4122033898, 162.4698305085, 179.5677966102);
+  color: rgb(65.4661016949, 74.1949152542, 89.0338983051);
 }
 .koum-label.neutral:not(:disabled).transparent {
   background-color: rgba(153, 163, 180, 0.2);
