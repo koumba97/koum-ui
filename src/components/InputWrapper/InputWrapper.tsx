@@ -12,10 +12,12 @@ export interface InputWrapperProps {
     children: React.ReactNode;
     iconPosition?: 'right' | 'left';
     id?: string;
+    element?: 'div' | 'button';
     label: string;
     visibleLabel?: boolean;
     additionalClass?: string;
     onChange?: (value: string | number) => void;
+    onClick?: () => void;
 }
 
 const InputWrapper = ({
@@ -30,8 +32,10 @@ const InputWrapper = ({
     label,
     additionalClass,
     visibleLabel = true,
+    element = 'div',
     children,
     onChange,
+    onClick,
     ...props
 }: InputWrapperProps) => {
     const reactId = React.useId();
@@ -42,22 +46,48 @@ const InputWrapper = ({
     return (
         <div className="koum-input-wrapper">
             {visibleLabel ? <label htmlFor={inputId}>{label} </label> : null}
-            <div
-                className={[
-                    'koum-input',
-                    size,
-                    inputShape,
-                    iconInput,
-                    additionalClass,
-                    icon && 'icon',
-                ].join(' ')}
-                style={{
-                    flexDirection:
-                        icon && iconPosition === 'left' ? 'row-reverse' : 'row',
-                }}
-            >
-                {children}
-            </div>
+            {element === 'div' ? (
+                <div
+                    className={[
+                        'koum-input',
+                        size,
+                        inputShape,
+                        iconInput,
+                        additionalClass,
+                        icon && 'icon',
+                    ].join(' ')}
+                    style={{
+                        flexDirection:
+                            icon && iconPosition === 'left'
+                                ? 'row-reverse'
+                                : 'row',
+                    }}
+                >
+                    {children}
+                </div>
+            ) : (
+                <button
+                    onClick={onClick}
+                    disabled={disabled}
+                    className={[
+                        'koum-input',
+                        (size = 'medium'),
+                        inputShape,
+                        iconInput,
+                        additionalClass,
+                        disabled && 'disabled',
+                        icon && 'icon',
+                    ].join(' ')}
+                    style={{
+                        flexDirection:
+                            icon && iconPosition === 'left'
+                                ? 'row-reverse'
+                                : 'row',
+                    }}
+                >
+                    {children}
+                </button>
+            )}
         </div>
     );
 };

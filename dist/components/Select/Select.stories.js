@@ -1,10 +1,7 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { fn } from 'storybook/test';
-
 import Select from './Select';
 import EarthSVG from '../../global/Earth';
-
 const meta = {
     title: 'Example/Select',
     component: Select,
@@ -14,12 +11,9 @@ const meta = {
     },
     tags: ['autodocs'],
     args: { onChange: fn() },
-} satisfies Meta<typeof Select>;
-
+};
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Round: Story = {
+export const Round = {
     args: {
         placeholder: 'Select an animal',
         label: 'animal',
@@ -32,8 +26,7 @@ export const Round: Story = {
         ],
     },
 };
-
-export const Square: Story = {
+export const Square = {
     args: {
         placeholder: 'Select an animal',
         visibleLabel: false,
@@ -46,8 +39,7 @@ export const Square: Story = {
         ],
     },
 };
-
-export const SelectWithIcon: Story = {
+export const SelectWithIcon = {
     args: {
         label: 'Search',
         placeholder: 'Type something...',
@@ -59,22 +51,9 @@ export const SelectWithIcon: Story = {
             { label: 'test 3', value: 'test-3' },
         ],
     },
-    render: (args) => (
-        <Select
-            {...args}
-            icon={
-                <EarthSVG
-                    width={20}
-                    height={20}
-                    viewBox="0 0 20 20"
-                    color="#b1bdd2"
-                />
-            }
-        />
-    ),
+    render: (args) => (_jsx(Select, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: "#b1bdd2" }) }))),
 };
-
-export const Disabled: Story = {
+export const Disabled = {
     args: {
         disabled: true,
         label: 'Search',

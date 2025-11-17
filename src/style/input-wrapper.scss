@@ -14,11 +14,26 @@ $square-border-radius: 10px;
         margin-bottom: 6px;
         color: $grey-800;
     }
-    &:has(input:disabled) {
+    &:has(input:disabled),
+    &:has(button:disabled) {
         label {
             color: $grey-100;
         }
     }
+
+    button.koum-input {
+        transition: 0.3s scale;
+
+        &:active {
+            scale: 90%;
+        }
+        &:focus-visible {
+            outline-offset: 1px;
+            outline: solid 4px lighten($color: $focus-color, $amount: 10%);
+            border-color: $primary-color;
+        }
+    }
+
     .koum-input {
         display: flex;
         gap: 10px;
@@ -32,6 +47,7 @@ $square-border-radius: 10px;
             0.3s border,
             0.3s border-color,
             0.3s outline;
+        position: relative;
 
         &.round {
             border-radius: 50px;
@@ -42,6 +58,7 @@ $square-border-radius: 10px;
             outline: solid 4px lighten($color: $focus-color, $amount: 10%);
             border-color: $primary-color;
         }
+
         input {
             outline: none;
             width: 100%;
@@ -51,7 +68,9 @@ $square-border-radius: 10px;
             }
         }
 
-        &:has(input:disabled) {
+        &:has(input:disabled),
+        &:has(button:disabled),
+        &:disabled {
             background-color: $grey-50;
             border-color: $grey-50;
             cursor: not-allowed;

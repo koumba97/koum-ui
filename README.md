@@ -1,7 +1,7 @@
 # Koum UI ✨
 
 **Koum UI** is a personal, accessible UI components library built with **React** and **TypeScript**.  
-Its purpose is to speed up development across my React projects by providing a reusable, consistent component base.  
+Its purpose is to speed up development across React projects by providing a reusable, consistent component base.  
 More components will be added progressively.
 
 ## ♿ Accessibility
@@ -43,6 +43,7 @@ Currently, Koum UI includes the following components:
 - Radio
 - Checkbox
 - Input
+- Select
 - (More coming soon...)
 
 ## 🧪 Development

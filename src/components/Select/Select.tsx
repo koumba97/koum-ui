@@ -1,19 +1,27 @@
-import React from 'react';
-//import '../../style/input.css';
+import React, { useEffect, useRef, useState } from 'react';
+import '../../style/select.css';
 import InputWrapper from '../InputWrapper/InputWrapper';
+import ChevronSVG from '../../global/Chevron';
+import useClickOutside from '../../utils/useClickOutside';
+import { KoumThemeColorHex } from '../../global/types';
+
+interface Option {
+    value: string | number;
+    label: string;
+}
 
 export interface SelectProps {
-    value?: string | number;
+    value?: any;
     type?: 'text' | 'number';
     placeholder?: string;
     disabled?: boolean;
     shape?: 'round' | 'square';
-    size?: 'small' | 'medium' | 'large';
     icon?: React.ReactNode;
     iconPosition?: 'right' | 'left';
     id?: string;
     label: string;
     visibleLabel?: boolean;
+    options: Option[];
     additionalClass?: string;
     onChange?: (value: string | number) => void;
 }
@@ -23,10 +31,10 @@ const Select = ({
     id,
     type = 'text',
     disabled = false,
-    placeholder,
+    placeholder = '',
     shape = 'round',
-    size = 'medium',
     icon,
+    options,
     iconPosition = 'right',
     label,
     additionalClass,
@@ -36,31 +44,93 @@ const Select = ({
 }: SelectProps) => {
     const reactId = React.useId();
     const inputId = id ? id : reactId;
+    const [visibleOptions, setVisibleOptions] = useState(false);
+    const [selectedValue, setSelectValue] = useState(value);
+    const ref = useClickOutside(() => setVisibleOptions(false));
+    const selectPlaceholder = placeholder
+        ? placeholder
+        : label.charAt(0).toUpperCase() + label.slice(1);
+    const selectRef = useRef<HTMLSelectElement>(null);
 
-    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const val = type === 'number' ? Number(e.target.value) : e.target.value;
-        if (onChange) onChange(val);
+    useEffect(() => {
+        setVisibleOptions(false);
+    }, [selectedValue]);
+
+    const handleClick = () => {
+        setVisibleOptions(true);
     };
+    const handleSelect = (val: any) => {
+        if (selectRef.current) {
+            selectRef.current.value = String(val);
+            selectRef.current.dispatchEvent(
+                new Event('change', { bubbles: true })
+            );
+        }
+        setSelectValue(val);
+        onChange?.(val);
+    };
+
     return (
-        <InputWrapper
-            label={label}
-            size={size}
-            id={inputId}
-            shape={shape}
-            additionalClass={additionalClass}
-        >
-            <input
-                type={type}
+        <div className={`koum-select ${disabled ? 'disabled' : ''}`} ref={ref}>
+            <InputWrapper
+                label={label}
+                size="medium"
                 id={inputId}
-                value={value}
+                shape={shape}
+                additionalClass={additionalClass}
+                visibleLabel={visibleLabel}
                 disabled={disabled}
-                placeholder={placeholder}
-                aria-disabled={disabled}
-                aria-label={!visibleLabel ? label : undefined}
-                onChange={handleInput}
-            />
-            {icon && icon}
-        </InputWrapper>
+                element="button"
+                onClick={handleClick}
+            >
+                <select
+                    ref={selectRef}
+                    className="native-select"
+                    defaultValue={value}
+                    disabled={disabled}
+                    aria-disabled={disabled}
+                    aria-label={!visibleLabel ? label : undefined}
+                    onChange={(e) => onChange?.(e.target.value)}
+                >
+                    {options.map((opt) => (
+                        <option key={opt.value} value={opt.value}>
+                            {opt.label}
+                        </option>
+                    ))}
+                </select>
+                {icon && icon}
+                {selectedValue ? (
+                    selectedValue
+                ) : (
+                    <span className="placeholder">{selectPlaceholder}</span>
+                )}
+                <span className={`chevron ${visibleOptions ? 'open' : ''}`}>
+                    <ChevronSVG
+                        width={15}
+                        height={17}
+                        color={KoumThemeColorHex.neutral}
+                    />
+                </span>
+
+                {visibleOptions && (
+                    <div className="select-options" role="listbox">
+                        {options.map((opt) => (
+                            <div
+                                key={opt.value}
+                                role="option"
+                                tabIndex={0}
+                                className={`select-option ${opt.value === selectedValue ? 'selected' : ''}`}
+                                onClick={() => handleSelect(opt.value)}
+                            >
+                                <div className="option-content">
+                                    <span>{opt.label}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </InputWrapper>
+        </div>
     );
 };
 

@@ -1,0 +1,66 @@
+@import './design-tokens.scss';
+
+.koum-select {
+    .native-select {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .placeholder {
+        color: $neutral-color;
+    }
+    .chevron {
+        transition: transform 0.3s;
+        &.open {
+            transform: rotate(-90deg);
+        }
+    }
+    &.disabled {
+        user-select: none;
+        cursor: not-allowed;
+        .select-options,
+        .select-option {
+            user-select: none;
+        }
+    }
+    &.disabled * {
+        user-select: none;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .select-options {
+        position: absolute;
+        width: 100%;
+        background: white;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        top: 40px;
+        left: 0;
+    }
+
+    .select-option {
+        padding: 10px;
+        cursor: pointer;
+
+        &.selected {
+            background: lighten($color: $neutral-color, $amount: 30%);
+
+            font-weight: 600;
+        }
+        &:not(.selected) {
+            &:hover {
+                background: #f5f5f5;
+            }
+        }
+
+        .select-option .option-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+}
