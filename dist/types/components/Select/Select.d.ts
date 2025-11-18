@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style/select.css';
 interface Option {
-    value: string | number;
+    value: string;
     label: string;
 }
 export interface SelectProps {
@@ -21,7 +21,10 @@ export interface SelectProps {
     visibleLabel?: boolean;
     options: Option[];
     additionalClass?: string;
-    onChange?: (value: string | number) => void;
+    onChange?: (value: {
+        label: string;
+        value: string;
+    }) => void;
 }
 declare const Select: ({ value, id, type, disabled, placeholder, shape, icon, options, iconPosition, width, label, additionalClass, visibleLabel, onChange, ...props }: SelectProps) => import("react/jsx-runtime").JSX.Element;
 export default Select;

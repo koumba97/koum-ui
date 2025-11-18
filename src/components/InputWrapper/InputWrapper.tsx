@@ -46,7 +46,7 @@ const InputWrapper = ({
     const iconInput = !visibleLabel && icon && 'icon-input';
 
     return (
-        <div className="koum-input-wrapper">
+        <div className={`koum-input-wrapper ${additionalClass}`}>
             {visibleLabel ? <label htmlFor={inputId}>{label} </label> : null}
             {element === 'div' ? (
                 <div
@@ -55,7 +55,7 @@ const InputWrapper = ({
                         size,
                         inputShape,
                         iconInput,
-                        additionalClass,
+                        ,
                         icon && 'icon',
                     ].join(' ')}
                     style={{

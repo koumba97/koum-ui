@@ -18,12 +18,12 @@ const InputWrapper = (_a) => {
     const inputId = id ? id : reactId;
     const inputShape = shape === 'round' && 'round';
     const iconInput = !visibleLabel && icon && 'icon-input';
-    return (_jsxs("div", Object.assign({ className: "koum-input-wrapper" }, { children: [visibleLabel ? _jsxs("label", Object.assign({ htmlFor: inputId }, { children: [label, " "] })) : null, element === 'div' ? (_jsx("div", Object.assign({ className: [
+    return (_jsxs("div", Object.assign({ className: `koum-input-wrapper ${additionalClass}` }, { children: [visibleLabel ? _jsxs("label", Object.assign({ htmlFor: inputId }, { children: [label, " "] })) : null, element === 'div' ? (_jsx("div", Object.assign({ className: [
                     'koum-input',
                     size,
                     inputShape,
                     iconInput,
-                    additionalClass,
+                    ,
                     icon && 'icon',
                 ].join(' '), style: {
                     flexDirection: icon && iconPosition === 'left'

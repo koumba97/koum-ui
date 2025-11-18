@@ -27,10 +27,13 @@ const Select = (_a) => {
         : label.charAt(0).toUpperCase() + label.slice(1);
     const selectRef = useRef(null);
     useEffect(() => {
+        setSelectValue(value);
+    }, [value]);
+    useEffect(() => {
         setVisibleOptions(false);
     }, [selectedValue]);
     const handleClick = () => {
-        setVisibleOptions(true);
+        setVisibleOptions(!visibleOptions);
     };
     const handleSelect = (val) => {
         if (selectRef.current) {
@@ -40,6 +43,11 @@ const Select = (_a) => {
         setSelectValue(val);
         onChange === null || onChange === void 0 ? void 0 : onChange(val);
     };
-    return (_jsx("div", Object.assign({ className: `koum-select ${disabled ? 'disabled' : ''}`, ref: ref }, { children: _jsxs(InputWrapper, Object.assign({ label: label, size: "medium", id: inputId, width: width, shape: shape, additionalClass: additionalClass, visibleLabel: visibleLabel, disabled: disabled, element: "button", onClick: handleClick }, { children: [_jsx("select", Object.assign({ ref: selectRef, className: "native-select", defaultValue: value === null || value === void 0 ? void 0 : value.value, disabled: disabled, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined, onChange: (e) => onChange === null || onChange === void 0 ? void 0 : onChange(e.target.value) }, { children: options.map((opt) => (_jsx("option", Object.assign({ value: opt.value }, { children: opt.label }), opt.value))) })), icon && icon, selectedValue ? (selectedValue.label) : (_jsx("span", Object.assign({ className: "placeholder" }, { children: selectPlaceholder }))), _jsx("span", Object.assign({ className: `chevron ${visibleOptions ? 'open' : ''}` }, { children: _jsx(ChevronSVG, { width: 15, height: 17, color: "#7f8898" }) })), visibleOptions && (_jsx("div", Object.assign({ className: "select-options", role: "listbox" }, { children: options.map((opt) => (_jsx("div", Object.assign({ role: "option", tabIndex: 0, className: `select-option ${opt.value === (selectedValue === null || selectedValue === void 0 ? void 0 : selectedValue.value) ? 'selected' : ''}`, onClick: () => handleSelect(opt) }, { children: _jsx("div", Object.assign({ className: "option-content" }, { children: _jsx("span", { children: opt.label }) })) }), opt.value))) })))] })) })));
+    return (_jsx("div", Object.assign({ className: `koum-select ${disabled ? 'disabled' : ''} ${additionalClass}`, style: {
+            width: width,
+        }, ref: ref }, { children: _jsxs(InputWrapper, Object.assign({ label: label, size: "medium", id: inputId, width: width, shape: shape, visibleLabel: visibleLabel, disabled: disabled, element: "button", onClick: handleClick }, { children: [_jsx("select", Object.assign({ ref: selectRef, className: "native-select", defaultValue: value === null || value === void 0 ? void 0 : value.value, disabled: disabled, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined }, { children: options.map((opt) => (_jsx("option", Object.assign({ value: opt.value }, { children: opt.label }), opt.value))) })), icon && icon, selectedValue ? (selectedValue.label) : (_jsx("span", Object.assign({ className: "placeholder" }, { children: selectPlaceholder }))), _jsx("span", Object.assign({ className: `chevron ${visibleOptions ? 'open' : ''}` }, { children: _jsx(ChevronSVG, { width: 15, height: 17, color: "#7f8898" }) })), visibleOptions && (_jsx("div", Object.assign({ className: "select-options", role: "listbox" }, { children: options.map((opt) => (_jsx("div", Object.assign({ role: "option", tabIndex: 0, className: `select-option ${opt.value === (selectedValue === null || selectedValue === void 0 ? void 0 : selectedValue.value) ? 'selected' : ''}`, onClick: () => handleSelect({
+                            label: opt.label,
+                            value: opt.value,
+                        }) }, { children: _jsx("div", Object.assign({ className: "option-content" }, { children: _jsx("span", { children: opt.label }) })) }), opt.value))) })))] })) })));
 };
 export default Select;

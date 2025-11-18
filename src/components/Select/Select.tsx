@@ -6,7 +6,7 @@ import useClickOutside from '../../utils/useClickOutside';
 import { KoumThemeColorHex } from '../../global/types';
 
 interface Option {
-    value: string | number;
+    value: string;
     label: string;
 }
 
@@ -24,7 +24,7 @@ export interface SelectProps {
     visibleLabel?: boolean;
     options: Option[];
     additionalClass?: string;
-    onChange?: (value: string | number) => void;
+    onChange?: (value: { label: string; value: string }) => void;
 }
 
 const Select = ({
@@ -55,13 +55,17 @@ const Select = ({
     const selectRef = useRef<HTMLSelectElement>(null);
 
     useEffect(() => {
+        setSelectValue(value);
+    }, [value]);
+
+    useEffect(() => {
         setVisibleOptions(false);
     }, [selectedValue]);
 
     const handleClick = () => {
-        setVisibleOptions(true);
+        setVisibleOptions(!visibleOptions);
     };
-    const handleSelect = (val: any) => {
+    const handleSelect = (val: { label: string; value: string }) => {
         if (selectRef.current) {
             selectRef.current.value = String(val);
             selectRef.current.dispatchEvent(
@@ -73,14 +77,19 @@ const Select = ({
     };
 
     return (
-        <div className={`koum-select ${disabled ? 'disabled' : ''}`} ref={ref}>
+        <div
+            className={`koum-select ${disabled ? 'disabled' : ''} ${additionalClass}`}
+            style={{
+                width: width,
+            }}
+            ref={ref}
+        >
             <InputWrapper
                 label={label}
                 size="medium"
                 id={inputId}
                 width={width}
                 shape={shape}
-                additionalClass={additionalClass}
                 visibleLabel={visibleLabel}
                 disabled={disabled}
                 element="button"
@@ -93,7 +102,6 @@ const Select = ({
                     disabled={disabled}
                     aria-disabled={disabled}
                     aria-label={!visibleLabel ? label : undefined}
-                    onChange={(e) => onChange?.(e.target.value)}
                 >
                     {options.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -119,7 +127,12 @@ const Select = ({
                                 role="option"
                                 tabIndex={0}
                                 className={`select-option ${opt.value === selectedValue?.value ? 'selected' : ''}`}
-                                onClick={() => handleSelect(opt)}
+                                onClick={() =>
+                                    handleSelect({
+                                        label: opt.label,
+                                        value: opt.value,
+                                    })
+                                }
                             >
                                 <div className="option-content">
                                     <span>{opt.label}</span>

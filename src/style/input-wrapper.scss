@@ -22,11 +22,11 @@ $square-border-radius: 10px;
     }
 
     button.koum-input {
-        transition: 0.3s scale;
+        // transition: 0.3s scale;
 
-        &:active {
-            scale: 90%;
-        }
+        // &:active {
+        //     scale: 90%;
+        // }
         &:focus-visible {
             outline-offset: 1px;
             outline: solid 4px lighten($color: $focus-color, $amount: 10%);
@@ -37,6 +37,7 @@ $square-border-radius: 10px;
     .koum-input {
         display: flex;
         gap: 10px;
+        justify-content: space-between;
         align-items: center;
         border: solid 2px $grey-400;
         border-radius: $square-border-radius;
