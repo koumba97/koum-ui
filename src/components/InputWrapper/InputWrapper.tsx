@@ -11,6 +11,7 @@ export interface InputWrapperProps {
     icon?: React.ReactNode;
     children: React.ReactNode;
     iconPosition?: 'right' | 'left';
+    width?: '100%' | 'max-content';
     id?: string;
     element?: 'div' | 'button';
     label: string;
@@ -27,6 +28,7 @@ const InputWrapper = ({
     disabled = false,
     shape = 'round',
     size = 'medium',
+    width = '100%',
     icon,
     iconPosition = 'right',
     label,
@@ -61,6 +63,7 @@ const InputWrapper = ({
                             icon && iconPosition === 'left'
                                 ? 'row-reverse'
                                 : 'row',
+                        width: width,
                     }}
                 >
                     {children}
@@ -83,6 +86,7 @@ const InputWrapper = ({
                             icon && iconPosition === 'left'
                                 ? 'row-reverse'
                                 : 'row',
+                        width: width,
                     }}
                 >
                     {children}

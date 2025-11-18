@@ -2,7 +2,7 @@ import type { StoryObj } from '@storybook/react-webpack5';
 import EarthSVG from '../../global/Earth';
 declare const meta: {
     title: string;
-    component: ({ value, id, type, disabled, placeholder, shape, icon, options, iconPosition, label, additionalClass, visibleLabel, onChange, ...props }: import("./Select").SelectProps) => import("react/jsx-runtime").JSX.Element;
+    component: ({ value, id, type, disabled, placeholder, shape, icon, options, iconPosition, width, label, additionalClass, visibleLabel, onChange, ...props }: import("./Select").SelectProps) => import("react/jsx-runtime").JSX.Element;
     subcomponents: {
         EarthSVG: typeof EarthSVG;
     };

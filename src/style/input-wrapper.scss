@@ -38,10 +38,9 @@ $square-border-radius: 10px;
         display: flex;
         gap: 10px;
         align-items: center;
-        border: solid 2px $grey-200;
+        border: solid 2px $grey-400;
         border-radius: $square-border-radius;
         background-color: white;
-        width: 100%;
         outline: 0px lighten($color: $focus-color, $amount: 10%);
         transition:
             0.3s border,
@@ -61,7 +60,6 @@ $square-border-radius: 10px;
 
         input {
             outline: none;
-            width: 100%;
             &::placeholder {
                 color: $grey-200;
                 opacity: 1;

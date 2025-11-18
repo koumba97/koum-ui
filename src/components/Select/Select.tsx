@@ -11,13 +11,14 @@ interface Option {
 }
 
 export interface SelectProps {
-    value?: any;
+    value?: { label: string; value: string };
     type?: 'text' | 'number';
     placeholder?: string;
     disabled?: boolean;
     shape?: 'round' | 'square';
     icon?: React.ReactNode;
     iconPosition?: 'right' | 'left';
+    width?: '100%' | 'max-content';
     id?: string;
     label: string;
     visibleLabel?: boolean;
@@ -36,6 +37,7 @@ const Select = ({
     icon,
     options,
     iconPosition = 'right',
+    width = 'max-content',
     label,
     additionalClass,
     visibleLabel = true,
@@ -76,6 +78,7 @@ const Select = ({
                 label={label}
                 size="medium"
                 id={inputId}
+                width={width}
                 shape={shape}
                 additionalClass={additionalClass}
                 visibleLabel={visibleLabel}
@@ -86,7 +89,7 @@ const Select = ({
                 <select
                     ref={selectRef}
                     className="native-select"
-                    defaultValue={value}
+                    defaultValue={value?.value}
                     disabled={disabled}
                     aria-disabled={disabled}
                     aria-label={!visibleLabel ? label : undefined}
@@ -100,16 +103,12 @@ const Select = ({
                 </select>
                 {icon && icon}
                 {selectedValue ? (
-                    selectedValue
+                    selectedValue.label
                 ) : (
                     <span className="placeholder">{selectPlaceholder}</span>
                 )}
                 <span className={`chevron ${visibleOptions ? 'open' : ''}`}>
-                    <ChevronSVG
-                        width={15}
-                        height={17}
-                        color={KoumThemeColorHex.neutral}
-                    />
+                    <ChevronSVG width={15} height={17} color="#7f8898" />
                 </span>
 
                 {visibleOptions && (
@@ -119,8 +118,8 @@ const Select = ({
                                 key={opt.value}
                                 role="option"
                                 tabIndex={0}
-                                className={`select-option ${opt.value === selectedValue ? 'selected' : ''}`}
-                                onClick={() => handleSelect(opt.value)}
+                                className={`select-option ${opt.value === selectedValue?.value ? 'selected' : ''}`}
+                                onClick={() => handleSelect(opt)}
                             >
                                 <div className="option-content">
                                     <span>{opt.label}</span>

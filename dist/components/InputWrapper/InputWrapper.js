@@ -13,7 +13,7 @@ import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import '../../style/input-wrapper.css';
 const InputWrapper = (_a) => {
-    var { value, id, type = 'text', disabled = false, shape = 'round', size = 'medium', icon, iconPosition = 'right', label, additionalClass, visibleLabel = true, element = 'div', children, onChange, onClick } = _a, props = __rest(_a, ["value", "id", "type", "disabled", "shape", "size", "icon", "iconPosition", "label", "additionalClass", "visibleLabel", "element", "children", "onChange", "onClick"]);
+    var { value, id, type = 'text', disabled = false, shape = 'round', size = 'medium', width = '100%', icon, iconPosition = 'right', label, additionalClass, visibleLabel = true, element = 'div', children, onChange, onClick } = _a, props = __rest(_a, ["value", "id", "type", "disabled", "shape", "size", "width", "icon", "iconPosition", "label", "additionalClass", "visibleLabel", "element", "children", "onChange", "onClick"]);
     const reactId = React.useId();
     const inputId = id ? id : reactId;
     const inputShape = shape === 'round' && 'round';
@@ -29,6 +29,7 @@ const InputWrapper = (_a) => {
                     flexDirection: icon && iconPosition === 'left'
                         ? 'row-reverse'
                         : 'row',
+                    width: width,
                 } }, { children: children }))) : (_jsx("button", Object.assign({ onClick: onClick, disabled: disabled, className: [
                     'koum-input',
                     (size = 'medium'),
@@ -41,6 +42,7 @@ const InputWrapper = (_a) => {
                     flexDirection: icon && iconPosition === 'left'
                         ? 'row-reverse'
                         : 'row',
+                    width: width,
                 } }, { children: children })))] })));
 };
 export default InputWrapper;

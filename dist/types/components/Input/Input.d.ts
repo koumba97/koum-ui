@@ -11,11 +11,12 @@ export interface InputProps {
     size?: 'small' | 'medium' | 'large';
     icon?: React.ReactNode;
     iconPosition?: 'right' | 'left';
+    width?: '100%' | 'max-content';
     id?: string;
     label: string;
     visibleLabel?: boolean;
     additionalClass?: string;
     onChange?: (value: string | number) => void;
 }
-declare const Input: ({ value, id, color, type, disabled, placeholder, shape, size, icon, iconPosition, label, additionalClass, visibleLabel, onChange, ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
+declare const Input: ({ value, id, color, type, disabled, placeholder, shape, size, icon, iconPosition, width, label, additionalClass, visibleLabel, onChange, ...props }: InputProps) => import("react/jsx-runtime").JSX.Element;
 export default Input;

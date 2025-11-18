@@ -9,6 +9,7 @@ export interface InputWrapperProps {
     icon?: React.ReactNode;
     children: React.ReactNode;
     iconPosition?: 'right' | 'left';
+    width?: '100%' | 'max-content';
     id?: string;
     element?: 'div' | 'button';
     label: string;
@@ -17,5 +18,5 @@ export interface InputWrapperProps {
     onChange?: (value: string | number) => void;
     onClick?: () => void;
 }
-declare const InputWrapper: ({ value, id, type, disabled, shape, size, icon, iconPosition, label, additionalClass, visibleLabel, element, children, onChange, onClick, ...props }: InputWrapperProps) => import("react/jsx-runtime").JSX.Element;
+declare const InputWrapper: ({ value, id, type, disabled, shape, size, width, icon, iconPosition, label, additionalClass, visibleLabel, element, children, onChange, onClick, ...props }: InputWrapperProps) => import("react/jsx-runtime").JSX.Element;
 export default InputWrapper;

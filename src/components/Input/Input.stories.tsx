@@ -66,7 +66,7 @@ export const InputWithIcon: Story = {
                     width={20}
                     height={20}
                     viewBox="0 0 20 20"
-                    color="#b1bdd2"
+                    color={'#7f8898'}
                 />
             }
         />

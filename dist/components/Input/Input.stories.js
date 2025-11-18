@@ -48,7 +48,7 @@ export const InputWithIcon = {
         shape: 'square',
         visibleLabel: true,
     },
-    render: (args) => (_jsx(Input, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: "#b1bdd2" }) }))),
+    render: (args) => (_jsx(Input, Object.assign({}, args, { icon: _jsx(EarthSVG, { width: 20, height: 20, viewBox: "0 0 20 20", color: '#7f8898' }) }))),
 };
 export const Disabled = {
     args: {

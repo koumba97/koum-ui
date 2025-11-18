@@ -9,30 +9,19 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import '../../style/input.css';
+import InputWrapper from '../InputWrapper/InputWrapper';
 const Input = (_a) => {
-    var { value, id, color = 'primary', type = 'text', disabled = false, placeholder, shape = 'round', size = 'medium', icon, iconPosition = 'right', label, additionalClass, visibleLabel = true, onChange } = _a, props = __rest(_a, ["value", "id", "color", "type", "disabled", "placeholder", "shape", "size", "icon", "iconPosition", "label", "additionalClass", "visibleLabel", "onChange"]);
+    var { value, id, color = 'primary', type = 'text', disabled = false, placeholder, shape = 'round', size = 'medium', icon, iconPosition = 'right', width = 'max-content', label, additionalClass, visibleLabel = true, onChange } = _a, props = __rest(_a, ["value", "id", "color", "type", "disabled", "placeholder", "shape", "size", "icon", "iconPosition", "width", "label", "additionalClass", "visibleLabel", "onChange"]);
     const reactId = React.useId();
     const inputId = id ? id : reactId;
-    const inputShape = shape === 'round' && 'round';
-    const iconInput = !visibleLabel && icon && 'icon-input';
     const handleInput = (e) => {
         const val = type === 'number' ? Number(e.target.value) : e.target.value;
         if (onChange)
             onChange(val);
     };
-    return (_jsxs("div", Object.assign({ className: "koum-input-wrapper" }, { children: [visibleLabel ? _jsxs("label", Object.assign({ htmlFor: inputId }, { children: [label, " "] })) : null, _jsxs("div", Object.assign({ className: [
-                    'koum-input',
-                    size,
-                    color,
-                    inputShape,
-                    iconInput,
-                    additionalClass,
-                    icon && 'icon',
-                ].join(' '), style: {
-                    flexDirection: icon && iconPosition === 'left' ? 'row-reverse' : 'row',
-                } }, { children: [_jsx("input", { type: type, id: inputId, value: value, disabled: disabled, placeholder: placeholder, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined, onChange: handleInput }), icon && icon] }))] })));
+    return (_jsxs(InputWrapper, Object.assign({ label: label, size: size, id: inputId, shape: shape, additionalClass: additionalClass, visibleLabel: visibleLabel, disabled: disabled, element: "div", icon: icon, iconPosition: iconPosition, width: width }, { children: [_jsx("input", { type: type, id: inputId, value: value, disabled: disabled, placeholder: placeholder, "aria-disabled": disabled, "aria-label": !visibleLabel ? label : undefined, onChange: handleInput }), icon && icon] })));
 };
 export default Input;
