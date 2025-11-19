@@ -1,7 +1,7 @@
 import React from 'react';
 import { KoumThemeColor } from '../../global/types';
 import '../../style/button.css';
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
     color?: KoumThemeColor;
     disabled?: boolean;
@@ -9,10 +9,11 @@ export interface ButtonProps {
     size?: 'small' | 'medium' | 'large';
     buttonStyle?: 'filled' | 'outlined';
     icon?: React.ReactNode;
+    iconPosition?: 'right' | 'left';
     label: string;
     visibleLabel?: boolean;
     additionalClass?: string;
     onClick?: () => void;
 }
-declare const Button: ({ children, color, disabled, shape, size, buttonStyle, icon, label, additionalClass, visibleLabel, onClick, ...props }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
+declare const Button: ({ children, color, disabled, shape, size, buttonStyle, icon, iconPosition, label, additionalClass, visibleLabel, onClick, ...props }: ButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default Button;

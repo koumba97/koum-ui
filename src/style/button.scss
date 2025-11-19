@@ -61,7 +61,7 @@ $button-variants: (
 );
 
 $border-width: 2px;
-$round-border-radius: 20px;
+$round-border-radius: 25px;
 $square-border-radius: 10px;
 .koum-button {
     display: inline-block;
@@ -76,9 +76,27 @@ $square-border-radius: 10px;
     transition: scale 0.3s;
 
     label {
-        display: flex;
+        //display: flex;
         align-items: center;
         gap: 12px;
+    }
+    .button-text {
+        text-align: center;
+        width: 100%;
+    }
+
+    &.icon-left,
+    &.icon-right {
+        label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+    &.icon-right {
+        label {
+            flex-direction: row-reverse;
+        }
     }
 
     &::before {
